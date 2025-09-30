@@ -1,0 +1,297 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+enum UserRole {
+  ADMIN
+  STAFF
+  CLIENT
+}
+
+enum ServiceRequestStatus {
+  DRAFT
+  SUBMITTED
+  IN_PROGRESS
+  ON_HOLD
+  COMPLETED
+  CANCELLED
+}
+
+enum ServiceRequestCategory {
+  LICENSE_NEW
+  LICENSE_RENEWAL
+  PRO_SERVICE
+  VISA_SERVICE
+  DOCUMENT_CLEARING
+  OTHER
+}
+
+enum ServiceRequestPriority {
+  LOW
+  MEDIUM
+  HIGH
+  URGENT
+}
+
+enum StageKind {
+  PAYMENT_PENDING
+  DOCUMENTS_COLLECTION
+  SUBMISSION_PREP
+  LICENSE_APPLICATION
+  IMMIGRATION_PROCESS
+  EMIRATES_ID
+  MEDICAL_FITNESS
+  EID_STAMPING
+  CHAMBER_COMMERCE
+  VAT_REGISTRATION
+  COMPLETED
+}
+
+enum StageStatus {
+  NOT_STARTED
+  IN_PROGRESS
+  COMPLETED
+  BLOCKED
+  SKIPPED
+}
+
+enum TaskStatus {
+  TODO
+  IN_PROGRESS
+  COMPLETED
+  CANCELLED
+}
+
+enum PaymentMethod {
+  CASH
+  BANK_TRANSFER
+  CREDIT_CARD
+  CHECK
+  OTHER
+}
+
+enum RenewalStatus {
+  UPCOMING
+  DUE_SOON
+  OVERDUE
+  RENEWED
+  CANCELLED
+}
+
+model Organization {
+  id        String   @id @default(uuid())
+  name      String
+  slug      String   @unique
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+  deletedAt DateTime? @map("deleted_at")
+
+  users            User[]
+  clients          Client[]
+  serviceRequests  ServiceRequest[]
+  documents        Document[]
+  notes            Note[]
+
+  @@map("organizations")
+}
+
+model User {
+  id             String   @id @default(uuid())
+  email          String   @unique
+  name           String
+  role           UserRole
+  organizationId String?  @map("organization_id")
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+  deletedAt      DateTime? @map("deleted_at")
+
+  organization     Organization?    @relation(fields: [organizationId], references: [id])
+  assignedRequests ServiceRequest[] @relation("AssignedRequests")
+  createdRequests  ServiceRequest[] @relation("CreatedRequests")
+  tasks            Task[]
+  uploadedDocs     Document[]
+  createdNotes     Note[]
+
+  @@index([organizationId])
+  @@map("users")
+}
+
+model Client {
+  id             String   @id @default(uuid())
+  name           String
+  email          String?
+  phone          String?
+  companyName    String?  @map("company_name")
+  tradeLicense   String?  @map("trade_license")
+  emiratesId     String?  @map("emirates_id")
+  organizationId String   @map("organization_id")
+  createdAt      DateTime @default(now()) @map("created_at")
+  updatedAt      DateTime @updatedAt @map("updated_at")
+  deletedAt      DateTime? @map("deleted_at")
+
+  organization    Organization     @relation(fields: [organizationId], references: [id])
+  serviceRequests ServiceRequest[]
+  documents       Document[]       @relation("ClientDocuments")
+
+  @@index([organizationId])
+  @@map("clients")
+}
+
+model ServiceRequest {
+  id             String                  @id @default(uuid())
+  title          String
+  description    String?
+  category       ServiceRequestCategory
+  priority       ServiceRequestPriority @default(MEDIUM)
+  status         ServiceRequestStatus    @default(DRAFT)
+  clientId       String                  @map("client_id")
+  assigneeId     String?                 @map("assignee_id")
+  createdById    String                  @map("created_by_id")
+  organizationId String                  @map("organization_id")
+  dueDate        DateTime?               @map("due_date")
+  completedAt    DateTime?               @map("completed_at")
+  createdAt      DateTime                @default(now()) @map("created_at")
+  updatedAt      DateTime                @updatedAt @map("updated_at")
+  deletedAt      DateTime?               @map("deleted_at")
+
+  client       Client       @relation(fields: [clientId], references: [id])
+  assignee     User?        @relation("AssignedRequests", fields: [assigneeId], references: [id])
+  createdBy    User         @relation("CreatedRequests", fields: [createdById], references: [id])
+  organization Organization @relation(fields: [organizationId], references: [id])
+  stages       Stage[]
+  tasks        Task[]
+  documents    Document[]   @relation("ServiceRequestDocuments")
+  notes        Note[]       @relation("ServiceRequestNotes")
+  payments     Payment[]
+
+  @@index([clientId])
+  @@index([assigneeId])
+  @@index([organizationId])
+  @@index([status])
+  @@map("service_requests")
+}
+
+model Stage {
+  id               String      @id @default(uuid())
+  serviceRequestId String      @map("service_request_id")
+  kind             StageKind
+  status           StageStatus @default(NOT_STARTED)
+  startedAt        DateTime?   @map("started_at")
+  completedAt      DateTime?   @map("completed_at")
+  notes            String?
+  createdAt        DateTime    @default(now()) @map("created_at")
+  updatedAt        DateTime    @updatedAt @map("updated_at")
+
+  serviceRequest ServiceRequest @relation(fields: [serviceRequestId], references: [id])
+
+  @@index([serviceRequestId])
+  @@map("stages")
+}
+
+model Document {
+  id               String   @id @default(uuid())
+  filename         String
+  storagePath      String   @map("storage_path")
+  mimeType         String   @map("mime_type")
+  size             Int
+  ownerType        String   @map("owner_type") // 'client' or 'service_request'
+  ownerId          String   @map("owner_id")
+  clientId         String?  @map("client_id")
+  serviceRequestId String?  @map("service_request_id")
+  uploadedById     String   @map("uploaded_by_id")
+  organizationId   String   @map("organization_id")
+  tags             String[] @default([])
+  createdAt        DateTime @default(now()) @map("created_at")
+  updatedAt        DateTime @updatedAt @map("updated_at")
+  deletedAt        DateTime? @map("deleted_at")
+
+  uploadedBy     User            @relation(fields: [uploadedById], references: [id])
+  organization   Organization    @relation(fields: [organizationId], references: [id])
+  client         Client?         @relation("ClientDocuments", fields: [clientId], references: [id])
+  serviceRequest ServiceRequest? @relation("ServiceRequestDocuments", fields: [serviceRequestId], references: [id])
+
+  @@index([organizationId])
+  @@index([clientId])
+  @@index([serviceRequestId])
+  @@map("documents")
+}
+
+model Task {
+  id               String     @id @default(uuid())
+  title            String
+  description      String?
+  serviceRequestId String     @map("service_request_id")
+  assigneeId       String?    @map("assignee_id")
+  status           TaskStatus @default(TODO)
+  dueAt            DateTime?  @map("due_at")
+  completedAt      DateTime?  @map("completed_at")
+  createdAt        DateTime   @default(now()) @map("created_at")
+  updatedAt        DateTime   @updatedAt @map("updated_at")
+  deletedAt        DateTime?  @map("deleted_at")
+
+  serviceRequest ServiceRequest @relation(fields: [serviceRequestId], references: [id])
+  assignee       User?          @relation(fields: [assigneeId], references: [id])
+
+  @@index([serviceRequestId])
+  @@index([assigneeId])
+  @@map("tasks")
+}
+
+model Note {
+  id               String   @id @default(uuid())
+  body             String
+  ownerType        String   @map("owner_type") // 'service_request' etc
+  ownerId          String   @map("owner_id")
+  serviceRequestId String?  @map("service_request_id")
+  createdById      String   @map("created_by_id")
+  organizationId   String   @map("organization_id")
+  createdAt        DateTime @default(now()) @map("created_at")
+  updatedAt        DateTime @updatedAt @map("updated_at")
+  deletedAt        DateTime? @map("deleted_at")
+
+  createdBy      User            @relation(fields: [createdById], references: [id])
+  organization   Organization    @relation(fields: [organizationId], references: [id])
+  serviceRequest ServiceRequest? @relation("ServiceRequestNotes", fields: [serviceRequestId], references: [id])
+
+  @@index([serviceRequestId])
+  @@index([organizationId])
+  @@map("notes")
+}
+
+model Payment {
+  id               String        @id @default(uuid())
+  serviceRequestId String        @map("service_request_id")
+  amount           Decimal       @db.Decimal(10, 2)
+  currency         String        @default("AED")
+  method           PaymentMethod
+  reference        String?
+  paidAt           DateTime      @map("paid_at")
+  notes            String?
+  createdAt        DateTime      @default(now()) @map("created_at")
+  updatedAt        DateTime      @updatedAt @map("updated_at")
+
+  serviceRequest ServiceRequest @relation(fields: [serviceRequestId], references: [id])
+
+  @@index([serviceRequestId])
+  @@map("payments")
+}
+
+model Renewal {
+  id        String        @id @default(uuid())
+  licenseId String        @map("license_id")
+  dueDate   DateTime      @map("due_date")
+  status    RenewalStatus @default(UPCOMING)
+  notes     String?
+  createdAt DateTime      @default(now()) @map("created_at")
+  updatedAt DateTime      @updatedAt @map("updated_at")
+
+  @@index([status])
+  @@index([dueDate])
+  @@map("renewals")
+}
