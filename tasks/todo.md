@@ -121,3 +121,44 @@ Build the foundation of the portal with a monorepo structure, core dependencies,
 - Create remaining pages (Clients, Documents, etc.)
 - Add unit tests for utilities and components
 - Implement proper loading and error states
+
+---
+
+## Deployment Tasks (Current Focus)
+
+### GitHub Setup
+- [x] Verify GitHub account exists or create new one (StartupZoneFZE)
+- [x] Create repository: The-Startup-Zone-License-PRO-Ops-Portal
+- [x] Create Personal Access Token
+- [x] Connect local repository to GitHub
+- [x] Push initial code to GitHub
+- [x] Verify code uploaded successfully
+
+### Supabase Setup
+- [ ] Create Supabase account
+- [ ] Create new project in Bahrain region (me-south-1)
+- [ ] Get API credentials (URL, anon key, service role key)
+- [ ] Get database connection strings
+- [ ] Run Prisma migrations
+- [ ] Apply RLS policies via SQL
+- [ ] Run seed script (optional)
+
+### Vercel Setup
+- [ ] Create Vercel account
+- [ ] Import GitHub repository
+- [ ] Configure environment variables
+- [ ] Set build settings for monorepo
+- [ ] Deploy and get preview URL
+
+### CI/CD Configuration
+- [ ] Add GitHub Actions secrets
+- [ ] Add Vercel tokens to GitHub
+- [ ] Test PR workflow
+- [ ] Verify automated deployments
+
+### Final Verification
+- [ ] Check GitHub Actions pipeline
+- [ ] Test preview deployment
+- [ ] Verify database connectivity
+- [ ] Test from Middle East region
+- [ ] Document any issues
