@@ -33,3 +33,13 @@ jobs:
 
       - name: Build test
         run: pnpm build || echo "Build needs environment variables"
+           - name: Check secrets exist
+     run: |
+       for name in DATABASE_URL DIRECT_URL NEXT_PUBLIC_SUPABASE_URL NEXT_PUBLIC_SUPABASE_ANON_KEY SUPABASE_SERVICE_ROLE_KEY; do
+         if [ -z "${!name}" ]; then
+           echo "::error::$name is missing"
+           exit 1
+         else
+           echo "$name is set"
+         fi
+       done
