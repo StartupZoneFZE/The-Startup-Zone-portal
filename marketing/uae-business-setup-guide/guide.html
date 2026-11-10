@@ -1,0 +1,791 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>The 30-Day UAE Business Setup Guide | Startup Zone</title><style>
+@font-face { font-family: 'InterV'; src: url('assets/fonts/inter-latin-wght-normal.woff2') format('woff2');
+  font-weight: 100 900; }
+:root { --orange:#FF5900; --navy:#061D25; --ink:#110024; --peach:#FDCEBE; --coral:#FF9874;
+  --mist:#F9F8FC; --line:#E2E2E8; --grey:#474752; --cream:#FFF4EE; }
+@page { size: A4; margin: 0; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+body { font-family: 'InterV', 'Inter', sans-serif; color: var(--ink); font-size: 10.5pt; line-height: 1.45; }
+.page { width: 210mm; height: 297mm; position: relative; overflow: hidden; page-break-after: always;
+  background: #fff; padding: 16mm 16mm 18mm; }
+.page:last-child { page-break-after: auto; }
+h1, h2, h3 { color: var(--navy); line-height: 1.12; letter-spacing: -0.01em; }
+h2 { font-size: 24pt; font-weight: 800; margin-bottom: 3mm; }
+h3 { font-size: 12.5pt; font-weight: 700; }
+.kicker { color: var(--orange); font-weight: 700; font-size: 9pt; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 2mm; }
+.lead { font-size: 11.5pt; color: var(--grey); max-width: 160mm; margin-bottom: 7mm; }
+.orange { color: var(--orange); }
+
+/* running header / footer */
+.top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 9mm; }
+.top img { height: 8mm; }
+.chip { background: var(--navy); color: #fff; border-radius: 99px; padding: 1.3mm 4mm; font-size: 8pt;
+  font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+.chip b { color: var(--orange); }
+.foot { position: absolute; left: 16mm; right: 16mm; bottom: 8mm; display: flex; justify-content: space-between;
+  font-size: 7.5pt; color: #8a8a96; border-top: 0.3mm solid var(--line); padding-top: 2.5mm; }
+.foot .pg { color: var(--navy); font-weight: 700; }
+
+/* cover */
+.cover { padding: 0; background: var(--navy); color: #fff; }
+.cover .photo { position: absolute; inset: 0; background: url('assets/photos/cover.jpg') center/cover; }
+.cover .shade { position: absolute; inset: 0;
+  background: linear-gradient(180deg, rgba(6,29,37,.15) 0%, rgba(6,29,37,.35) 40%, rgba(6,29,37,.96) 70%, #061D25 100%); }
+.cover .inner { position: absolute; inset: 0; padding: 18mm; display: flex; flex-direction: column; }
+.cover .logo { height: 13mm; align-self: flex-start; }
+.cover .badge { margin-top: auto; display: inline-block; background: var(--orange); color: #fff; font-weight: 800;
+  font-size: 10pt; letter-spacing: .14em; text-transform: uppercase; padding: 2mm 5mm; border-radius: 1.5mm; align-self: flex-start; }
+.cover h1 { color: #fff; font-size: 50pt; font-weight: 900; line-height: .98; margin: 6mm 0 5mm; letter-spacing: -0.025em; }
+.cover h1 span { color: var(--orange); }
+.cover .sub { font-size: 14pt; color: #dfe6e8; max-width: 150mm; margin-bottom: 9mm; }
+.cover .stats { display: flex; gap: 0; border-top: 0.4mm solid rgba(255,255,255,.25); padding-top: 6mm; }
+.cover .stats div { flex: 1; font-size: 8.5pt; color: #b9c6ca; }
+.cover .stats b { display: block; font-size: 17pt; color: #fff; font-weight: 800; }
+.cover .ed { margin-top: 7mm; font-size: 8pt; color: #8fa1a6; letter-spacing: .08em; text-transform: uppercase; }
+
+/* welcome */
+.hero-img { height: 82mm; border-radius: 4mm; background-size: cover; background-position: center; margin-bottom: 8mm; }
+.cols2 { display: grid; grid-template-columns: 1fr 1fr; gap: 7mm; }
+.howto { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4mm; margin-top: 4mm; }
+.howto div { background: var(--mist); border-radius: 3mm; padding: 4.5mm; font-size: 9.5pt; color: var(--grey); }
+.howto b { display: block; color: var(--navy); font-size: 10.5pt; margin-bottom: 1mm; }
+.howto i { font-style: normal; display: inline-block; width: 7mm; height: 7mm; border-radius: 50%; background: var(--orange);
+  color: #fff; text-align: center; line-height: 7mm; font-weight: 800; margin-bottom: 2mm; }
+.sign { margin-top: 7mm; padding: 5mm 6mm; border-left: 1.2mm solid var(--orange); background: var(--cream); border-radius: 0 3mm 3mm 0;
+  font-size: 10.5pt; color: var(--ink); }
+
+/* why uae */
+.why { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+.why div { border: 0.3mm solid var(--line); border-radius: 4mm; padding: 6mm; }
+.why b { display: block; font-size: 28pt; font-weight: 900; color: var(--orange); line-height: 1; letter-spacing: -0.02em; }
+.why h3 { margin: 2mm 0 1.5mm; }
+.why p { font-size: 9.5pt; color: var(--grey); }
+.strip { height: 52mm; border-radius: 4mm; margin-top: 6mm; background-size: cover; background-position: center 40%; }
+
+/* roadmap */
+.road { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4mm; }
+.road .wk { border-radius: 4mm; overflow: hidden; border: 0.3mm solid var(--line); }
+.road .wk header { background: var(--navy); color: #fff; padding: 4mm; }
+.road .wk:nth-child(even) header { background: var(--orange); }
+.road .wk header small { display: block; font-size: 7.5pt; letter-spacing: .12em; text-transform: uppercase; opacity: .8; }
+.road .wk header b { font-size: 15pt; }
+.road ol { list-style: none; padding: 3mm 3.5mm; }
+.road li { font-size: 8.4pt; padding: 1.6mm 0; border-bottom: 0.25mm dashed var(--line); display: flex; gap: 2mm; color: var(--grey); }
+.road li:last-child { border: 0; }
+.road li span { font-weight: 800; color: var(--navy); min-width: 5.5mm; }
+.note { font-size: 8.5pt; color: var(--grey); margin-top: 6mm; background: var(--mist); padding: 4mm 5mm; border-radius: 3mm; }
+
+/* tables */
+table { width: 100%; border-collapse: separate; border-spacing: 0; font-size: 9.2pt; }
+th { text-align: left; background: var(--navy); color: #fff; padding: 3mm 3.5mm; font-weight: 700; }
+th:first-child { border-radius: 3mm 0 0 0; } th:last-child { border-radius: 0 3mm 0 0; }
+td { padding: 3mm 3.5mm; border-bottom: 0.3mm solid var(--line); vertical-align: top; color: var(--grey); }
+td:first-child { font-weight: 700; color: var(--navy); width: 30%; }
+tr:nth-child(even) td { background: var(--mist); }
+th.fz { background: var(--orange); }
+
+/* free zones */
+.fzs { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+.fz-card { border: 0.3mm solid var(--line); border-radius: 4mm; padding: 5.5mm; position: relative; }
+.fz-card .tag { position: absolute; top: 5mm; right: 5mm; background: var(--peach); color: var(--navy); font-size: 7.5pt;
+  font-weight: 700; padding: 1mm 3mm; border-radius: 99px; }
+.fz-card h3 { font-size: 20pt; font-weight: 900; color: var(--orange); }
+.fz-card .nm { font-size: 9pt; font-weight: 600; color: var(--navy); }
+.fz-card .em { font-size: 8.5pt; color: var(--grey); margin-bottom: 3mm; }
+.fz-card .best { font-size: 9pt; background: var(--mist); border-radius: 2mm; padding: 2.5mm 3mm; margin-bottom: 3mm; }
+.fz-card .best b { color: var(--navy); }
+.fz-card ul { list-style: none; font-size: 9pt; }
+.fz-card li { padding: 1mm 0 1mm 5mm; position: relative; }
+.fz-card li::before { content: ''; position: absolute; left: 0; top: 2.6mm; width: 2.2mm; height: 2.2mm; border-radius: 50%; background: var(--orange); }
+.fz-card .off { margin-top: 2.5mm; font-size: 8.5pt; color: var(--grey); border-top: 0.25mm dashed var(--line); padding-top: 2.5mm; }
+
+/* timeline chart */
+.tl { margin-top: 2mm; }
+.tl .row { display: grid; grid-template-columns: 52mm 1fr 20mm; align-items: center; gap: 3mm; padding: 2.6mm 0; border-bottom: 0.25mm solid var(--line); }
+.tl .lbl { font-size: 9.3pt; font-weight: 600; color: var(--navy); }
+.tl .track { position: relative; height: 6mm; background: var(--mist); border-radius: 99px; }
+.tl .bar { position: absolute; top: 0; height: 6mm; border-radius: 99px; }
+.tl .val { font-size: 8.5pt; color: var(--grey); text-align: right; font-weight: 600; }
+.tl .scale { display: grid; grid-template-columns: 52mm 1fr 20mm; gap: 3mm; font-size: 7.5pt; color: #8a8a96; margin-top: 1.5mm; }
+.tl .scale div:nth-child(2) { display: flex; justify-content: space-between; }
+.legend { display: flex; gap: 6mm; font-size: 8.5pt; color: var(--grey); margin: 2mm 0 5mm; }
+.legend span::before { content: ''; display: inline-block; width: 3.5mm; height: 3.5mm; border-radius: 1mm; margin-right: 1.5mm; vertical-align: -0.5mm; background: var(--c); }
+
+/* week opener */
+.week { padding: 0; }
+.week .photo { height: 150mm; background-size: cover; background-position: center; position: relative; }
+.week .photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,29,37,.1), rgba(6,29,37,.85)); }
+.week .ttl { position: absolute; left: 16mm; bottom: 12mm; z-index: 2; color: #fff; }
+.week .ttl small { font-size: 11pt; font-weight: 800; letter-spacing: .2em; text-transform: uppercase; color: var(--orange); }
+.week .ttl h2 { color: #fff; font-size: 44pt; font-weight: 900; margin: 1mm 0 0; }
+.week .wlogo { position: absolute; top: 14mm; left: 16mm; height: 9mm; z-index: 2; }
+.week .body { padding: 10mm 16mm 0; display: grid; grid-template-columns: 1.15fr 1fr; gap: 9mm; }
+.week .body p { font-size: 11.5pt; color: var(--grey); }
+.week .days { list-style: none; margin-top: 5mm; }
+.week .days li { display: flex; gap: 3mm; align-items: center; padding: 2mm 0; border-bottom: 0.25mm dashed var(--line); font-size: 9.6pt; }
+.week .days li span { font-weight: 800; color: var(--orange); min-width: 13mm; }
+.outcomes { background: var(--navy); color: #fff; border-radius: 4mm; padding: 6mm; align-self: start; }
+.outcomes h3 { color: #fff; font-size: 11pt; margin-bottom: 3mm; }
+.outcomes li { list-style: none; padding: 1.8mm 0 1.8mm 7mm; position: relative; font-size: 9.6pt; color: #dfe6e8; }
+.outcomes li::before { content: '✓'; position: absolute; left: 0; color: var(--orange); font-weight: 900; }
+
+/* day page */
+.dayhead { display: flex; align-items: flex-end; gap: 6mm; margin-bottom: 5mm; }
+.daynum { background: var(--orange); color: #fff; border-radius: 4mm; width: 30mm; height: 30mm; display: flex; flex-direction: column;
+  align-items: center; justify-content: center; flex-shrink: 0; }
+.daynum small { font-size: 8pt; font-weight: 700; letter-spacing: .2em; }
+.daynum b { font-size: 34pt; font-weight: 900; line-height: 1; }
+.dayhead h2 { font-size: 25pt; margin: 0 0 1mm; }
+.progress { display: flex; gap: 0.8mm; margin-top: 2.5mm; }
+.progress i { width: 3.2mm; height: 1.6mm; border-radius: 1mm; background: var(--line); }
+.progress i.on { background: var(--orange); }
+.progress i.now { background: var(--navy); }
+.goal { background: var(--cream); border-radius: 3mm; padding: 4.5mm 6mm; display: flex; gap: 4mm; align-items: center; margin-bottom: 6mm; }
+.goal .ic { flex-shrink: 0; width: 10mm; height: 10mm; border-radius: 50%; background: var(--orange); position: relative; }
+.goal .ic::before, .goal .ic::after { content: ''; position: absolute; border-radius: 50%; border: 0.6mm solid #fff; }
+.goal .ic::before { inset: 2mm; } .goal .ic::after { inset: 3.9mm; background: #fff; }
+.goal small { display: block; font-size: 7.5pt; font-weight: 800; letter-spacing: .16em; color: var(--orange); text-transform: uppercase; }
+.goal p { font-size: 13pt; font-weight: 600; color: var(--navy); }
+.actions { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; margin-bottom: 6mm; }
+.act { border: 0.3mm solid var(--line); border-radius: 4mm; padding: 5mm; }
+.act .lab { font-size: 7.5pt; font-weight: 800; letter-spacing: .16em; color: var(--orange); text-transform: uppercase; }
+.act h3 { margin: 1mm 0 3.5mm; min-height: 11mm; font-size: 13.5pt; }
+.act ol { list-style: none; counter-reset: s; }
+.act li { counter-increment: s; position: relative; padding: 0 0 3mm 8mm; font-size: 10.4pt; color: var(--grey); }
+.act li::before { content: counter(s); position: absolute; left: 0; top: 0.2mm; width: 5.4mm; height: 5.4mm; border-radius: 50%;
+  background: var(--navy); color: #fff; font-size: 7.5pt; font-weight: 800; text-align: center; line-height: 5.4mm; }
+.duo { display: grid; grid-template-columns: 1.35fr 1fr; gap: 5mm; }
+.tip { background: var(--navy); color: #dfe6e8; border-radius: 4mm; padding: 6mm 6.5mm; font-size: 10.4pt; position: relative; }
+.tip .lab { display: flex; align-items: center; gap: 2mm; color: var(--orange); font-size: 7.5pt; font-weight: 800;
+  letter-spacing: .16em; text-transform: uppercase; margin-bottom: 2mm; }
+.tip .lab::before { content: '★'; font-size: 10pt; }
+.docs { background: var(--mist); border-radius: 4mm; padding: 5.5mm 6mm; }
+.docs .lab { color: var(--navy); font-size: 7.5pt; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; margin-bottom: 2mm; }
+.docs li { list-style: none; font-size: 9.8pt; color: var(--grey); padding: 0.9mm 0 0.9mm 6mm; position: relative; }
+.docs li::before { content: ''; position: absolute; left: 0; top: 1.6mm; width: 3mm; height: 3mm; border: 0.35mm solid var(--orange); border-radius: 0.7mm; }
+.page.day { display: flex; flex-direction: column; }
+.notes { margin-top: 6mm; display: grid; grid-template-columns: 1fr 44mm; gap: 6mm; flex: 1; margin-bottom: 4mm; }
+.notes .lines { background: repeating-linear-gradient(180deg, transparent 0 8.7mm, var(--line) 8.7mm 9mm); background-position: 0 4mm; }
+.notes .lines { font-size: 7.5pt; font-weight: 800; letter-spacing: .16em; color: #8a8a96; text-transform: uppercase; }
+.done { align-self: start; border: 0.4mm dashed var(--orange); border-radius: 4mm; padding: 4mm; text-align: center; font-size: 8.5pt; color: var(--grey); }
+.done .box { width: 9mm; height: 9mm; border: 0.6mm solid var(--orange); border-radius: 2mm; margin: 0 auto 2mm; }
+.done b { display: block; color: var(--navy); font-size: 10pt; }
+.done .dt { margin-top: 3mm; border-top: 0.3mm solid var(--line); padding-top: 1.5mm; font-size: 7.5pt; text-align: left; }
+
+/* tracker */
+.tracker { display: grid; grid-template-columns: repeat(5, 1fr); gap: 3mm; }
+.tracker div { border: 0.3mm solid var(--line); border-radius: 3mm; padding: 3mm; height: 33mm; display: flex; flex-direction: column; }
+.tracker div small { font-size: 7pt; font-weight: 800; letter-spacing: .12em; color: var(--orange); }
+.tracker div p { font-size: 8.2pt; color: var(--navy); font-weight: 600; line-height: 1.25; margin-top: 1mm; }
+.tracker div i { margin-top: auto; align-self: flex-end; width: 6mm; height: 6mm; border: 0.5mm solid var(--orange); border-radius: 1.5mm; }
+.tracker div.w2 small, .tracker div.w4 small { color: var(--navy); }
+
+/* checklists */
+.cl { display: grid; grid-template-columns: 1fr 1fr; gap: 5mm; }
+.cl section { border: 0.3mm solid var(--line); border-radius: 4mm; padding: 5mm; }
+.cl section.wide { grid-column: span 2; }
+.cl h3 { font-size: 11pt; margin-bottom: 2.5mm; padding-bottom: 2mm; border-bottom: 0.6mm solid var(--orange); }
+.cl ul { list-style: none; }
+.cl section.wide ul { columns: 2; column-gap: 8mm; }
+.cl li { font-size: 9.2pt; color: var(--grey); padding: 1.5mm 0 1.5mm 7mm; position: relative; break-inside: avoid; }
+.cl li::before { content: ''; position: absolute; left: 0; top: 1.9mm; width: 3.8mm; height: 3.8mm; border: 0.4mm solid var(--navy); border-radius: 0.9mm; }
+
+/* glossary + faq */
+.gl { columns: 2; column-gap: 8mm; }
+.gl div { break-inside: avoid; padding: 2.4mm 0; border-bottom: 0.25mm solid var(--line); font-size: 9.2pt; color: var(--grey); }
+.gl b { color: var(--navy); display: block; font-size: 9.8pt; }
+.faq div { padding: 4mm 0; border-bottom: 0.3mm solid var(--line); }
+.faq h3 { font-size: 11pt; margin-bottom: 1.2mm; }
+.faq h3::before { content: 'Q. '; color: var(--orange); }
+.faq p { font-size: 9.8pt; color: var(--grey); }
+.disc { font-size: 7.8pt; color: #8a8a96; margin-top: 6mm; line-height: 1.5; }
+
+/* back cover */
+.back { background: var(--navy); color: #fff; padding: 0; }
+.back .photo { height: 112mm; background: url('assets/photos/celebrate.jpg') center 30%/cover; position: relative; }
+.back .photo::after { content: ''; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(6,29,37,0) 40%, #061D25 100%); }
+.back .inner { padding: 4mm 18mm 0; }
+.back h2 { color: #fff; font-size: 34pt; font-weight: 900; }
+.back h2 span { color: var(--orange); }
+.back .sub { color: #c6d1d4; font-size: 12pt; margin: 3mm 0 7mm; max-width: 165mm; }
+.back .grid { display: grid; grid-template-columns: 1fr 46mm; gap: 8mm; align-items: start; }
+.back ul { list-style: none; }
+.back li { padding: 2.2mm 0; border-bottom: 0.3mm solid rgba(255,255,255,.12); font-size: 10.5pt; display: flex; gap: 4mm; }
+.back li small { width: 24mm; color: var(--orange); font-weight: 800; font-size: 7.5pt; letter-spacing: .14em; text-transform: uppercase; padding-top: 0.8mm; }
+.back .qr { background: #fff; border-radius: 4mm; padding: 4mm; text-align: center; color: var(--navy); font-size: 8pt; font-weight: 700; }
+.back .qr svg { width: 38mm; height: 38mm; display: block; margin: 0 auto 2mm; }
+.back .cta { display: inline-block; background: var(--orange); color: #fff; font-weight: 800; padding: 3.5mm 7mm; border-radius: 99px; font-size: 11pt; margin-top: 7mm; }
+.back .services { margin-top: 7mm; display: flex; flex-wrap: wrap; gap: 2mm; }
+.back .services span { border: 0.3mm solid rgba(255,255,255,.25); border-radius: 99px; padding: 1.2mm 3.5mm; font-size: 8.2pt; color: #dfe6e8; }
+.back .logo { position: absolute; bottom: 12mm; left: 18mm; height: 10mm; }
+.back .fine { position: absolute; bottom: 12mm; right: 18mm; font-size: 7pt; color: #7f9297; text-align: right; max-width: 110mm; }
+</style></head><body><section class="page cover">
+<div class="photo"></div><div class="shade"></div>
+<div class="inner">
+  <img class="logo" src="assets/brand/Logo-white.png" alt="Startup Zone">
+  <span class="badge">For overseas investors</span>
+  <h1>Your UAE company<br>in <span>30 days</span></h1>
+  <p class="sub">A friendly, day-by-day guide to setting up your business, getting your residence
+  visa and opening for business in the UAE, from anywhere in the world.</p>
+  <div class="stats">
+    <div><b>30</b>simple daily steps</div>
+    <div><b>4</b>free zones compared</div>
+    <div><b>100%</b>foreign ownership</div>
+    <div><b>1,000+</b>founders helped</div>
+  </div>
+  <div class="ed">November 2026 Edition · thestartupzone.ae</div>
+</div></section><section class="page "><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Start here</span></div>
+<div class="kicker">Welcome</div>
+<h2>Your UAE business starts here</h2>
+<div class="hero-img" style="background-image:url('assets/photos/burj-khalifa.jpg')"></div>
+<p class="lead">Thousands of founders from around the world choose the UAE every year. This guide
+breaks the whole journey into 30 small, doable steps, one page per day, so you always know
+exactly what to do next.</p>
+<div class="howto">
+  <div><i>1</i><b>One page a day</b>Each day has one goal and two short actions with numbered steps.</div>
+  <div><i>2</i><b>Pro tips</b>Insider advice from our team that saves you time, money and stress.</div>
+  <div><i>3</i><b>Tick as you go</b>Mark each day done and track progress on the 30-day tracker.</div>
+  <div><i>4</i><b>Tools at the back</b>Checklists, a timeline, a compliance calendar and a glossary.</div>
+</div>
+<div class="sign"><b>You don't have to do this alone.</b> Every step in this guide is something our team
+handles for clients every day. Stuck, or want it done for you? Message us on WhatsApp at
+<b>+971 52 346 9382</b>.</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">02</span></div></section><section class="page "><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Why the UAE</span></div>
+<div class="kicker">Why the UAE</div>
+<h2>Six reasons founders choose the UAE</h2>
+<p class="lead">A safe, modern and business-friendly base with low taxes and world-class connections.</p>
+<div class="why"><div><b>0%</b><h3>Personal income tax</h3><p>Keep what you earn. There is no tax on salaries or personal income.</p></div><div><b>100%</b><h3>Foreign ownership</h3><p>Own your company outright, with no local partner needed in free zones.</p></div><div><b>9%</b><h3>Corporate Tax</h3><p>One of the world&#x27;s most competitive rates, with 0% on the first AED 375,000 of profit.</p></div><div><b>8 hrs</b><h3>To two-thirds of the world</h3><p>A global hub connecting Europe, Asia and Africa.</p></div><div><b>Remote</b><h3>Setup</h3><p>Get your license without travelling. Visit only for your visa.</p></div><div><b>Family</b><h3>Residency</h3><p>Live in the UAE and sponsor your spouse and children.</p></div></div>
+<div class="strip" style="background-image:url('assets/photos/dubai-night.jpg')"></div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">03</span></div></section><section class="page "><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Roadmap</span></div>
+<div class="kicker">Your roadmap</div>
+<h2>30 days at a glance</h2>
+<p class="lead">Four weeks, four milestones. Follow the days in order, or jump to the step you're on.</p>
+<div class="road"><div class="wk"><header><small>Week 1</small><b>Plan</b></header><ol><li><span>01</span>Define your business idea</li><li><span>02</span>Choose your business activities</li><li><span>03</span>Mainland or free zone?</li><li><span>04</span>Pick your free zone</li><li><span>05</span>Decide owners and structure</li><li><span>06</span>Choose your trade name</li><li><span>07</span>Build your budget and visa plan</li></ol></div><div class="wk"><header><small>Week 2</small><b>License</b></header><ol><li><span>08</span>Prepare your document pack</li><li><span>09</span>Submit your application</li><li><span>10</span>Receive your initial approval</li><li><span>11</span>Sign your company documents</li><li><span>12</span>Choose your office space</li><li><span>13</span>Receive your trade license</li><li><span>14</span>Get your establishment card</li><li><span>15</span>File your UBO register</li></ol></div><div class="wk"><header><small>Week 3</small><b>Visas</b></header><ol><li><span>16</span>Understand your visa journey</li><li><span>17</span>Apply for your entry permit</li><li><span>18</span>Travel to the UAE</li><li><span>19</span>Complete your medical test</li><li><span>20</span>Emirates ID biometrics</li><li><span>21</span>Insurance and your residence visa</li><li><span>22</span>Family and settling in</li></ol></div><div class="wk"><header><small>Week 4</small><b>Operate</b></header><ol><li><span>23</span>Choose your bank</li><li><span>24</span>Prepare your bank KYC pack</li><li><span>25</span>Open your bank account</li><li><span>26</span>Register for Corporate Tax</li><li><span>27</span>Decide on VAT</li><li><span>28</span>Set up your bookkeeping</li><li><span>29</span>Start trading the right way</li><li><span>30</span>Lock in your compliance calendar</li></ol></div></div>
+<div class="note"><b>Good to know:</b> "Day" means a step, not a fixed calendar date. Government
+processing times vary, and some steps (like bank accounts) can take longer. Many steps also
+run in parallel. The timeline on page 07 shows typical durations.</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">04</span></div></section><section class="page "><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Compare</span></div>
+<div class="kicker">Day 3 companion</div>
+<h2>Mainland vs free zone</h2>
+<p class="lead">Both let you own 100% of your company. The right choice depends on who your customers are
+and where you'll do business.</p>
+<table><tr><th>&nbsp;</th><th>Mainland</th><th class="fz">Free zone</th></tr><tr><td>Ownership</td><td>100% foreign ownership for most activities</td><td>100% foreign ownership</td></tr><tr><td>Where you can trade</td><td>Anywhere in the UAE, including government contracts</td><td>Inside the free zone and internationally; UAE mainland trade usually via a distributor or extra permit</td></tr><tr><td>Licensing authority</td><td>Department of Economy of the emirate</td><td>The free zone authority</td></tr><tr><td>Office</td><td>Physical office with registered lease usually required</td><td>Flexi-desk options available</td></tr><tr><td>Visas</td><td>Linked to office size</td><td>Linked to package and office type</td></tr><tr><td>Corporate Tax</td><td>9% above AED 375,000 profit</td><td>0% on qualifying income for Qualifying Free Zone Persons; otherwise 9%</td></tr><tr><td>Setup time</td><td>Typically 1–3 weeks</td><td>Often within a week</td></tr><tr><td>Remote setup</td><td>Possible for some steps</td><td>Fully remote license in most free zones</td></tr><tr><td>Best for</td><td>Retail, restaurants, local services, government work</td><td>Consulting, e-commerce, international trade, remote founders</td></tr></table>
+<div class="note"><b>Our view for overseas investors:</b> if you serve international clients, sell
+online or offer consulting, a free zone is usually faster, simpler and more cost-effective. You
+can always add a mainland branch later as you grow.</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">05</span></div></section><section class="page "><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Compare</span></div>
+<div class="kicker">Day 4 companion</div>
+<h2>Four free zones we recommend</h2>
+<p class="lead">Each one is fully open to overseas founders. Pick the one that fits your business, your
+budget and the address your clients expect.</p>
+<div class="fzs"><div class="fz-card"><span class="tag">Best value</span><h3>SHAMS</h3>
+<div class="nm">Sharjah Media City</div><div class="em">Sharjah</div>
+<div class="best"><b>Best for:</b> Media, creative, consulting, e-commerce and budget-conscious founders</div><ul><li>Very competitive pricing</li><li>Fully online setup</li><li>Wide range of activities</li><li>Short drive from Dubai</li></ul>
+<div class="off"><b>Office options:</b> Flexi-desk to private office</div></div><div class="fz-card"><span class="tag">Dubai address</span><h3>IFZA</h3>
+<div class="nm">International Free Zone Authority</div><div class="em">Dubai</div>
+<div class="best"><b>Best for:</b> Consultancy, trading, tech and professional services wanting a Dubai address</div><ul><li>Dubai address and prestige</li><li>Fast, digital setup</li><li>Flexible visa packages</li><li>Popular with banks and clients</li></ul>
+<div class="off"><b>Office options:</b> Flexi-desk to private office</div></div><div class="fz-card"><span class="tag">Industry &amp; trade</span><h3>RAKEZ</h3>
+<div class="nm">Ras Al Khaimah Economic Zone</div><div class="em">Ras Al Khaimah</div>
+<div class="best"><b>Best for:</b> Manufacturing, industrial, trading and logistics businesses</div><ul><li>Warehouses, factories and land</li><li>Free zone and non-free-zone licenses</li><li>Lower operating costs</li><li>Strong industrial ecosystem</li></ul>
+<div class="off"><b>Office options:</b> Flexi-desk to warehouse and land</div></div><div class="fz-card"><span class="tag">Startup friendly</span><h3>ANCFZ</h3>
+<div class="nm">Ajman Nuventure Centre Free Zone</div><div class="em">Ajman</div>
+<div class="best"><b>Best for:</b> Startups, freelancers, e-commerce and digital businesses</div><ul><li>Low-cost startup packages</li><li>Modern, digital-first process</li><li>Startup-friendly community</li><li>Close to Dubai and Sharjah</li></ul>
+<div class="off"><b>Office options:</b> Flexi-desk and shared workspace</div></div></div>
+<div class="note"><b>Pricing changes often</b>, so ask us for a current all-in quote showing year-1 and renewal
+costs side by side, with our service fee included.</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">06</span></div></section><section class="page "><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Timeline</span></div>
+<div class="kicker">Timeline</div>
+<h2>How long does each step take?</h2>
+<p class="lead">Typical processing times in working days once your documents are complete. Many steps
+overlap, which is how a full setup fits into about a month.</p>
+<div class="legend"><span style="--c:#061D25">Week 1: Plan</span><span style="--c:#FF5900">Week 2: License</span><span style="--c:#FF9874">Week 3: Visas</span><span style="--c:#474752">Week 4: Operate</span></div>
+<div class="tl"><div class="row"><div class="lbl">Activity &amp; name selection</div><div class="track"><div class="bar" style="left:0;width:3.3%;background:#061D25;opacity:.35"></div><div class="bar" style="left:0.0%;width:6.7%;background:#061D25"></div></div><div class="val">1–2 days</div></div><div class="row"><div class="lbl">Initial approval</div><div class="track"><div class="bar" style="left:0;width:3.3%;background:#FF5900;opacity:.35"></div><div class="bar" style="left:0.0%;width:10.0%;background:#FF5900"></div></div><div class="val">1–3 days</div></div><div class="row"><div class="lbl">Trade license issued</div><div class="track"><div class="bar" style="left:0;width:6.7%;background:#FF5900;opacity:.35"></div><div class="bar" style="left:3.3%;width:20.0%;background:#FF5900"></div></div><div class="val">2–7 days</div></div><div class="row"><div class="lbl">Establishment card</div><div class="track"><div class="bar" style="left:0;width:3.3%;background:#FF5900;opacity:.35"></div><div class="bar" style="left:0.0%;width:16.7%;background:#FF5900"></div></div><div class="val">1–5 days</div></div><div class="row"><div class="lbl">Entry permit</div><div class="track"><div class="bar" style="left:0;width:10.0%;background:#FF9874;opacity:.35"></div><div class="bar" style="left:6.7%;width:16.7%;background:#FF9874"></div></div><div class="val">3–7 days</div></div><div class="row"><div class="lbl">Medical test results</div><div class="track"><div class="bar" style="left:0;width:3.3%;background:#FF9874;opacity:.35"></div><div class="bar" style="left:0.0%;width:10.0%;background:#FF9874"></div></div><div class="val">1–3 days</div></div><div class="row"><div class="lbl">Emirates ID &amp; residence visa</div><div class="track"><div class="bar" style="left:0;width:16.7%;background:#FF9874;opacity:.35"></div><div class="bar" style="left:13.3%;width:20.0%;background:#FF9874"></div></div><div class="val">5–10 days</div></div><div class="row"><div class="lbl">Corporate Tax registration</div><div class="track"><div class="bar" style="left:0;width:16.7%;background:#474752;opacity:.35"></div><div class="bar" style="left:13.3%;width:53.3%;background:#474752"></div></div><div class="val">5–20 days</div></div><div class="row"><div class="lbl">Corporate bank account</div><div class="track"><div class="bar" style="left:0;width:33.3%;background:#474752;opacity:.35"></div><div class="bar" style="left:30.0%;width:70.0%;background:#474752"></div></div><div class="val">10–30 days</div></div><div class="scale"><div></div><div><span>0</span><span>5</span><span>10</span><span>15</span><span>20</span><span>25</span><span>30 days</span></div><div></div></div></div>
+<div class="note"><b>Speed it up:</b> clear scans, quick answers to compliance questions and booking your
+UAE trip as soon as your entry permit is issued are the three biggest time savers. Times are
+typical, not guaranteed, and vary by free zone, nationality and bank.</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">07</span></div></section><section class="page week">
+<div class="photo" style="background-image:url('assets/photos/planning.jpg')">
+  <img class="wlogo" src="assets/brand/Logo-white.png" alt="Startup Zone">
+  <div class="ttl"><small>Week 1 · Plan</small><h2>Plan your UAE company</h2></div>
+</div>
+<div class="body">
+  <div><p>This week you&#x27;ll make the big decisions: what your company will do, where it will be registered, who owns it and what it will cost. Get these right and the rest of the month goes smoothly.</p><ul class="days"><li><span>Day 01</span>Define your business idea</li><li><span>Day 02</span>Choose your business activities</li><li><span>Day 03</span>Mainland or free zone?</li><li><span>Day 04</span>Pick your free zone</li><li><span>Day 05</span>Decide owners and structure</li><li><span>Day 06</span>Choose your trade name</li><li><span>Day 07</span>Build your budget and visa plan</li></ul></div>
+  <div class="outcomes"><h3>By the end of this week you'll have</h3><ul><li>Business activities chosen</li><li>Free zone selected</li><li>Trade name with two backups</li><li>Clear year-1 budget and visa plan</li></ul></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">08</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 1 · <b>Plan</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>01</b></div>
+  <div><h2>Define your business idea</h2><div class="progress"><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Get clear on what you will sell, who you will sell to, and why the UAE.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Write your one-page business snapshot</h3><ol><li>Describe what you sell in one simple sentence.</li><li>List your target customers: UAE, GCC or worldwide.</li><li>Note where you will work from: inside the UAE or abroad.</li><li>Write down your revenue goal for the first 12 months.</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Decide what you need from your company</h3><ol><li>Do you want to live in the UAE (residence visa)?</li><li>Will you sell to UAE customers locally, or online and abroad?</li><li>How many staff will you hire in year one?</li><li>Do you need a shop, office or warehouse, or just a desk?</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>Your answers decide everything else: activity, free zone, visas and office type. Send your snapshot to us on WhatsApp and we&#x27;ll shortlist the best options for you in one call.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>A notebook (or this guide!)</li><li>Passport copy, keep it handy</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 1 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">09</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 1 · <b>Plan</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>02</b></div>
+  <div><h2>Choose your business activities</h2><div class="progress"><i class="on"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Pick licensed activities that match exactly what your company will do.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Find your activities</h3><ol><li>List every service or product you plan to offer.</li><li>Match each one to an official activity on the free zone&#x27;s list.</li><li>Check that your activities can be combined on one license.</li><li>Shortlist your core activities, plus any you&#x27;ll add within 2 years.</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Check for special approvals</h3><ol><li>Flag regulated areas: finance, health, education, food, legal, crypto.</li><li>Ask whether an outside approval is needed (e.g. a ministry).</li><li>Note any extra time and cost those approvals add.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>Banks check that your payments match your licensed activities. Choose activities that clearly describe your real business. We search thousands of activities across free zones for you in minutes.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>Business snapshot from Day 1</li><li>Website or company profile (if any)</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 2 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">10</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 1 · <b>Plan</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>03</b></div>
+  <div><h2>Mainland or free zone?</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Choose the right type of company for how and where you&#x27;ll trade.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Answer three key questions</h3><ol><li>Will most customers be shops, people or government bodies inside the UAE? Mainland may suit you.</li><li>Will you serve clients worldwide, online or as a consultant? A free zone is usually simpler and cheaper.</li><li>Do you need many visas or a large office? Compare both options.</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Use the comparison table</h3><ol><li>Read the Mainland vs Free Zone table at the front of this guide.</li><li>Tick the column that matches more of your needs.</li><li>Write down any questions for your consultant.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>100% foreign ownership is available in free zones and for most mainland activities. For overseas founders running an international or online business, a free zone is usually the fastest, lowest-cost start.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>Mainland vs Free Zone table (this guide)</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 3 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">11</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 1 · <b>Plan</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>04</b></div>
+  <div><h2>Pick your free zone</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Choose between SHAMS, IFZA, RAKEZ and ANCFZ with confidence.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Compare the four free zones</h3><ol><li>Read the free zone comparison at the front of this guide.</li><li>Decide whether a Dubai address matters to your clients.</li><li>Match the number of visas you need to each package.</li><li>Choose your office type: flexi-desk, office or warehouse.</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Get two all-in quotes</h3><ol><li>Ask for a quote for your top two free zones.</li><li>Compare year-1 and renewal costs, not just year 1.</li><li>Check what&#x27;s included: license, establishment card, visa, insurance.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>Always compare the renewal cost. A cheap first year with an expensive renewal is not a bargain. Our quotes show both, with our service fee already included.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>Activity shortlist (Day 2)</li><li>Your visa needs (Day 1)</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 4 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">12</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 1 · <b>Plan</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>05</b></div>
+  <div><h2>Decide owners and structure</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Agree who owns the company, in what shares, and who manages it.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Set up ownership</h3><ol><li>One owner or several partners? This decides your company type.</li><li>Agree share percentages in writing before you apply.</li><li>Choose the manager/director and who will sign for the bank.</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Individual or company as shareholder?</h3><ol><li>Individual shareholder: passport-based and the simplest option.</li><li>Corporate shareholder (your company abroad owns it): needs parent company documents.</li><li>Parent company documents must usually be notarised and attested for the UAE. Allow extra weeks.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>If speed matters, start with yourself as an individual shareholder. Company names like FZE, FZCO or FZ-LLC vary by free zone. We&#x27;ll explain which one fits you.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>Passports of all shareholders</li><li>Corporate shareholder: incorporation certificate, MOA, board resolution (attested)</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 5 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">13</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 1 · <b>Plan</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>06</b></div>
+  <div><h2>Choose your trade name</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Pick a name that&#x27;s approved first time, with two backups ready.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Brainstorm your names</h3><ol><li>Write three name options in order of preference.</li><li>Check that the .ae domain and social media handles are free.</li><li>Keep it easy to spell and pronounce in English.</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Check the naming rules</h3><ol><li>No offensive words or words against public morals or religion.</li><li>No names of governments, famous brands or organisations without permission.</li><li>Using a person&#x27;s name usually means that person must be a shareholder.</li><li>Add the legal ending (e.g. FZE or FZ-LLC). We confirm the right one.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>Always submit three names at once. If your first choice is taken, your application keeps moving instead of losing a day.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>Three name options</li><li>Activity list (Day 2)</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 6 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">14</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 1 · <b>Plan</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>07</b></div>
+  <div><h2>Build your budget and visa plan</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Know your full year-1 cost and how many visas you need.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Plan your visas</h3><ol><li>Count yourself and partners who need residence visas.</li><li>Add employees you plan to hire in year one.</li><li>Note family members you may sponsor later.</li><li>Choose a package with enough visa quota, plus room to grow.</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Build your budget</h3><ol><li>License and registration (your package price).</li><li>Establishment card and visa costs per person.</li><li>Health insurance for each visa holder.</li><li>Bank minimum balance, bookkeeping and renewal savings.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>Keep a 10–15% buffer for extras like courier, translation or document attestation. We give you a fixed price upfront, so there are no surprises.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>Quotes from Day 4</li><li>Visa plan</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 7 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">15</span></div></section><section class="page week">
+<div class="photo" style="background-image:url('assets/photos/office.jpg')">
+  <img class="wlogo" src="assets/brand/Logo-white.png" alt="Startup Zone">
+  <div class="ttl"><small>Week 2 · License</small><h2>Get your trade license</h2></div>
+</div>
+<div class="body">
+  <div><p>Now it becomes official. You&#x27;ll submit your documents, sign your company papers and get your trade license. You can do all of this from your home country. No trip to the UAE needed yet.</p><ul class="days"><li><span>Day 08</span>Prepare your document pack</li><li><span>Day 09</span>Submit your application</li><li><span>Day 10</span>Receive your initial approval</li><li><span>Day 11</span>Sign your company documents</li><li><span>Day 12</span>Choose your office space</li><li><span>Day 13</span>Receive your trade license</li><li><span>Day 14</span>Get your establishment card</li><li><span>Day 15</span>File your UBO register</li></ul></div>
+  <div class="outcomes"><h3>By the end of this week you'll have</h3><ul><li>Trade license and company documents</li><li>Office or flexi-desk agreement</li><li>Establishment card (lets your company sponsor visas)</li><li>UBO register filed</li></ul></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">16</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 2 · <b>License</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>08</b></div>
+  <div><h2>Prepare your document pack</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Have clear, correct scans of every document ready to submit.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Scan your documents</h3><ol><li>Passport: colour scan, all corners visible, 6+ months validity.</li><li>Passport-size photo with a white background.</li><li>Proof of home address (utility bill or bank statement, last 3 months).</li><li>UAE visa or entry stamp page, if you have one.</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Check the quality</h3><ol><li>Save as clear PDF or JPG. Not cropped, no glare.</li><li>Name files clearly, e.g. Passport_JohnSmith.pdf.</li><li>Check your name is spelled the same on every document.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>Blurry scans are the number one cause of delays. Use a phone scanner app in daylight instead of a quick photo. It takes two minutes and saves days.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>Passport</li><li>Photo</li><li>Proof of address</li><li>CV (for some activities)</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 8 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">17</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 2 · <b>License</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>09</b></div>
+  <div><h2>Submit your application</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Send a complete application to your chosen free zone.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Complete the application</h3><ol><li>Confirm activities, name, shareholders and package.</li><li>Review the application forms we prepare for you.</li><li>Sign the declarations and compliance (KYC) forms.</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Verify your identity</h3><ol><li>Some free zones ask for a short video call or online ID check.</li><li>Keep your original passport with you for the call.</li><li>Answer any compliance questions quickly and fully.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>Be clear and honest about your business model and where your funds come from. Complete answers keep your file moving; vague ones trigger more questions.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>Document pack (Day 8)</li><li>Signed application forms</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 9 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">18</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 2 · <b>License</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>10</b></div>
+  <div><h2>Receive your initial approval</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Get the free zone&#x27;s initial approval and reserve your name.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Check your approval</h3><ol><li>The free zone reviews your activities, name and shareholders.</li><li>You receive the initial approval and name reservation.</li><li>Check every detail: name spelling, activities, shareholder names.</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Pay your fees</h3><ol><li>Review the invoice for license and registration fees.</li><li>Pay by bank transfer or card.</li><li>Save the payment receipt in your company folder.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>Check every letter of your company name now. Fixing a spelling mistake after the license is issued means an amendment, which costs extra time and money.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>Initial approval</li><li>Payment receipt</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 10 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">19</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 2 · <b>License</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>11</b></div>
+  <div><h2>Sign your company documents</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Sign your Memorandum and Articles of Association (MOA/AOA).</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Review before you sign</h3><ol><li>Check shareholders, share split, manager and activities.</li><li>Check the share capital amount and whether it must be deposited.</li><li>Ask us anything you&#x27;re unsure about before signing.</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Sign and save</h3><ol><li>Sign electronically or in person, as the free zone requires.</li><li>Make sure every shareholder signs.</li><li>Save signed copies in your company folder.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>The MOA is your company&#x27;s rulebook, and banks will read it. Make sure the manager named in it is the person who will run the bank account.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>MOA / AOA</li><li>Shareholder resolutions</li><li>Specimen signatures (if required)</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 11 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">20</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 2 · <b>License</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>12</b></div>
+  <div><h2>Choose your office space</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Pick the workspace your package and visa plan need.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Know your options</h3><ol><li>Flexi-desk: lowest cost, ideal for founders working remotely.</li><li>Private office: needed for larger visa numbers in some free zones.</li><li>Warehouse or industrial unit: for trading and manufacturing (a RAKEZ strength).</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Confirm the details</h3><ol><li>Check the visa quota linked to your office type.</li><li>Sign the lease or desk agreement in the company&#x27;s name.</li><li>Note your official address for invoices and the bank.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>Start small. Most founders begin with a flexi-desk and upgrade when the team grows. There&#x27;s no need to pay for empty desks in year one.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>Lease or flexi-desk agreement</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 12 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">21</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 2 · <b>License</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>13</b></div>
+  <div><h2>Receive your trade license</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Get your license and company documents. You&#x27;re officially in business!</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Collect your documents</h3><ol><li>Trade license, certificate of incorporation, share certificate, MOA.</li><li>Check every detail is correct.</li><li>Save all PDFs in one &#x27;Company Documents&#x27; folder.</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Put your license to work</h3><ol><li>Send copies to your accountant and to us.</li><li>Add the license expiry date to your calendar.</li><li>Add license details to your website and email signature.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>Set a reminder 60 days before your license expires. Renewing on time avoids late fines and keeps your visas and bank account running smoothly.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>Trade license</li><li>Certificate of incorporation</li><li>Share certificate</li><li>MOA</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 13 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">22</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 2 · <b>License</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>14</b></div>
+  <div><h2>Get your establishment card</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Get the immigration card that lets your company sponsor visas.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Apply for the card</h3><ol><li>Submit the application with your license and manager&#x27;s passport.</li><li>Pay the establishment card fee.</li><li>Receive the card (usually electronic).</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Plan your visas</h3><ol><li>Confirm how many visas your company can sponsor.</li><li>Decide who applies first (usually the investor or partner).</li><li>Note the card&#x27;s expiry date. It renews with your license.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>No establishment card, no visas. It&#x27;s quick but often forgotten. We apply for it right after your license is issued, so your visa can start straight away.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>Trade license</li><li>Manager&#x27;s passport copy</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 14 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">23</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 2 · <b>License</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>15</b></div>
+  <div><h2>File your UBO register</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Declare your company&#x27;s real owners and organise your records.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Complete your UBO filing</h3><ol><li>Identify the Ultimate Beneficial Owners: people who own or control 25%+.</li><li>Complete the UBO, shareholder and director registers.</li><li>Submit them to the free zone within its deadline.</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Organise company records</h3><ol><li>Create a folder for licenses, MOA, certificates and resolutions.</li><li>Keep the registers of shareholders and directors up to date.</li><li>Keep company records for at least 7 years.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>UBO filing is mandatory and missing it can mean fines. Any change in ownership must be updated within 15 days. We prepare the forms for you.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>UBO register</li><li>Shareholder and director registers</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 15 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">24</span></div></section><section class="page week">
+<div class="photo" style="background-image:url('assets/photos/flight.jpg')">
+  <img class="wlogo" src="assets/brand/Logo-white.png" alt="Startup Zone">
+  <div class="ttl"><small>Week 3 · Visas</small><h2>Become a UAE resident</h2></div>
+</div>
+<div class="body">
+  <div><p>Time to visit the UAE. Your company sponsors your residence visa, giving you an Emirates ID and the right to live, bank and do business here. Plan to spend about a week in the country.</p><ul class="days"><li><span>Day 16</span>Understand your visa journey</li><li><span>Day 17</span>Apply for your entry permit</li><li><span>Day 18</span>Travel to the UAE</li><li><span>Day 19</span>Complete your medical test</li><li><span>Day 20</span>Emirates ID biometrics</li><li><span>Day 21</span>Insurance and your residence visa</li><li><span>Day 22</span>Family and settling in</li></ul></div>
+  <div class="outcomes"><h3>By the end of this week you'll have</h3><ul><li>Entry permit and arrival in the UAE</li><li>Medical test and Emirates ID</li><li>Residence visa issued</li><li>UAE Pass set up</li></ul></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">25</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 3 · <b>Visas</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>16</b></div>
+  <div><h2>Understand your visa journey</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Know which visa you need and the five steps to get it.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Know the visa types</h3><ol><li>Investor / partner visa: for shareholders of the company.</li><li>Employment visa: for staff your company hires.</li><li>Residence visas are typically valid for 2 years and renewable.</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Learn the five steps</h3><ol><li>Entry permit (issued before you travel).</li><li>Enter the UAE, or change status if already here.</li><li>Medical fitness test.</li><li>Emirates ID biometrics.</li><li>Residence visa issued, linked to your Emirates ID.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>You must be in the UAE for the medical test and biometrics. Plan a trip of about a week, and we&#x27;ll book your appointments so every day counts.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>Passport (6+ months valid)</li><li>Passport photo</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 16 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">26</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 3 · <b>Visas</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>17</b></div>
+  <div><h2>Apply for your entry permit</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Get the entry permit that lets you enter the UAE to become a resident.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Submit the application</h3><ol><li>We submit your passport, photo and establishment card.</li><li>Pay the entry permit fee.</li><li>Receive your e-entry permit, usually within a few working days.</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Plan your trip</h3><ol><li>Check the permit&#x27;s validity. You must enter before it expires.</li><li>Book flexible flights.</li><li>Book a hotel close to your medical centre.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>Don&#x27;t book non-refundable flights until your entry permit is issued. Once it&#x27;s in hand, book. We&#x27;ll line up your medical appointment for your arrival.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>Passport copy</li><li>Photo</li><li>Establishment card</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 17 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">27</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 3 · <b>Visas</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>18</b></div>
+  <div><h2>Travel to the UAE</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Arrive in the UAE on your entry permit, or change status here.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Arriving from abroad</h3><ol><li>Carry your printed entry permit and passport.</li><li>Get your entry stamp at immigration.</li><li>Send us a photo of your entry stamp page.</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Already in the UAE?</h3><ol><li>If you&#x27;re here on a visit visa, we can change your status inside the country.</li><li>Don&#x27;t leave the UAE while the change of status is processing.</li><li>Keep the change of status receipt safe.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>Buy a UAE mobile SIM on arrival. You&#x27;ll need a local number for UAE Pass, banking and government text updates.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>Entry permit</li><li>Passport</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 18 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">28</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 3 · <b>Visas</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>19</b></div>
+  <div><h2>Complete your medical test</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Pass the medical fitness test required for your residence visa.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Attend your appointment</h3><ol><li>We book your appointment at an approved medical centre.</li><li>Bring your passport, entry permit and a photo.</li><li>A quick blood test and chest X-ray. Usually under an hour.</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Get your results</h3><ol><li>Results usually arrive within 1–3 working days.</li><li>They are sent electronically to the visa system.</li><li>Keep your receipt until the visa is issued.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>On a tight schedule? Choose an express or VIP medical service. It costs a little more but can save you days in the UAE.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>Passport</li><li>Entry permit</li><li>Photo</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 19 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">29</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 3 · <b>Visas</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>20</b></div>
+  <div><h2>Emirates ID biometrics</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Give your fingerprints and photo for your Emirates ID.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Apply and attend</h3><ol><li>We submit your Emirates ID application.</li><li>Attend your biometrics appointment, if one is required.</li><li>Bring your original passport.</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Track and collect</h3><ol><li>Track your application through SMS updates.</li><li>Your card is delivered by courier or collected.</li><li>Add your digital ID in the UAE Pass app.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>Set up UAE Pass as soon as your Emirates ID is ready. It&#x27;s your digital identity for almost every government service, and lets you sign documents online.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>Original passport</li><li>Emirates ID application receipt</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 20 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">30</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 3 · <b>Visas</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>21</b></div>
+  <div><h2>Insurance and your residence visa</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Get health insurance and receive your UAE residence visa.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Arrange health insurance</h3><ol><li>Buy a policy that meets your emirate&#x27;s requirements.</li><li>Share the policy certificate with us.</li><li>Add the renewal date to your calendar.</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Receive your visa</h3><ol><li>Your residence visa is issued digitally. No passport sticker.</li><li>Download your e-visa copy.</li><li>Check your name, passport number, sponsor and job title.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>Congratulations, you&#x27;re a UAE resident! Remember: most residence visas can be cancelled if you stay outside the UAE for more than 6 months in a row.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>Insurance certificate</li><li>E-visa</li><li>Emirates ID</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 21 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">31</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 3 · <b>Visas</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>22</b></div>
+  <div><h2>Family and settling in</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Plan family sponsorship and sort out everyday life admin.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Plan family sponsorship</h3><ol><li>Check the minimum income needed to sponsor your family.</li><li>Collect your marriage certificate and children&#x27;s birth certificates.</li><li>Attest these in your home country and in the UAE.</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Settle in</h3><ol><li>Rent a home with a registered tenancy contract (Ejari in Dubai).</li><li>Open a personal bank account.</li><li>Check if you can convert your driving licence directly.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>Start attesting family documents early. It&#x27;s often the slowest step, taking 2–4 weeks from abroad. We can guide you through each stage.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>Marriage certificate (attested)</li><li>Birth certificates (attested)</li><li>Tenancy contract</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 22 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">32</span></div></section><section class="page week">
+<div class="photo" style="background-image:url('assets/photos/workspace.jpg')">
+  <img class="wlogo" src="assets/brand/Logo-white.png" alt="Startup Zone">
+  <div class="ttl"><small>Week 4 · Operate</small><h2>Open for business</h2></div>
+</div>
+<div class="body">
+  <div><p>The final week turns your company into a working business: a corporate bank account, tax registrations, clean bookkeeping and a compliance calendar, so nothing catches you out.</p><ul class="days"><li><span>Day 23</span>Choose your bank</li><li><span>Day 24</span>Prepare your bank KYC pack</li><li><span>Day 25</span>Open your bank account</li><li><span>Day 26</span>Register for Corporate Tax</li><li><span>Day 27</span>Decide on VAT</li><li><span>Day 28</span>Set up your bookkeeping</li><li><span>Day 29</span>Start trading the right way</li><li><span>Day 30</span>Lock in your compliance calendar</li></ul></div>
+  <div class="outcomes"><h3>By the end of this week you'll have</h3><ul><li>Corporate bank account application</li><li>Corporate Tax registration</li><li>VAT decision made</li><li>Bookkeeping and compliance calendar set up</li></ul></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">33</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 4 · <b>Operate</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>23</b></div>
+  <div><h2>Choose your bank</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Shortlist the banks that best fit your business profile.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Compare your options</h3><ol><li>Traditional banks: full service and branches, often higher minimum balances.</li><li>Digital banks: fast online opening and lower fees, fewer services.</li><li>Compare minimum balance, monthly fees, multi-currency and payment gateways.</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Find your best fit</h3><ol><li>Check which banks suit your nationality, activity and trading countries.</li><li>Apply to the best-matched bank first.</li><li>Consider a digital account for speed, plus a traditional bank for growth.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>Bank choice depends on your profile: nationality, activity and where your money comes from. We introduce you to the banks most likely to say yes.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>License pack</li><li>Passport, visa and Emirates ID</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 23 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">34</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 4 · <b>Operate</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>24</b></div>
+  <div><h2>Prepare your bank KYC pack</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Build a complete, convincing file for the bank.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Company documents</h3><ol><li>Trade license, incorporation certificate, MOA, share certificate.</li><li>Lease agreement and establishment card.</li><li>A 1–2 page business plan with expected turnover.</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Personal documents</h3><ol><li>Passport, visa and Emirates ID of all shareholders and signatories.</li><li>CV or profile showing your experience.</li><li>Proof of source of funds and 6 months of personal bank statements.</li><li>Contracts, invoices or letters of intent from clients or suppliers.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>Banks approve businesses they understand. A one-page summary of who your customers are, and where money comes from and goes to, is the best thing you can add.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>Bank readiness checklist (this guide)</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 24 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">35</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 4 · <b>Operate</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>25</b></div>
+  <div><h2>Open your bank account</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Complete your bank meeting and get your account opened.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Ace the meeting</h3><ol><li>Attend in person or by video, as the bank requires.</li><li>Explain your business simply, with examples of first clients.</li><li>Show your experience in this field.</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Follow up fast</h3><ol><li>Answer bank questions within 24 hours.</li><li>Sign the account opening forms.</li><li>Activate online banking and fund the account.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>Corporate accounts can take 2–6 weeks. Start the moment you have your license and Emirates ID, and keep running the rest of your setup in parallel.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>KYC pack (Day 24)</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 25 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">36</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 4 · <b>Operate</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>26</b></div>
+  <div><h2>Register for Corporate Tax</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Register your company for Corporate Tax and get your tax number.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Know the rules</h3><ol><li>Every UAE company, including free zone companies, must register.</li><li>9% Corporate Tax on taxable profit above AED 375,000; 0% up to that.</li><li>Qualifying Free Zone Persons can pay 0% on qualifying income (conditions apply).</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Register on EmaraTax</h3><ol><li>Create an EmaraTax account on the Federal Tax Authority portal.</li><li>Submit your license, MOA, and the manager&#x27;s passport and Emirates ID.</li><li>Receive your Corporate Tax registration number.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>Register on time. The late registration penalty is AED 10,000. Our tax team handles your registration from start to finish.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>Trade license</li><li>MOA</li><li>Owners&#x27; passports and Emirates IDs</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 26 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">37</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 4 · <b>Operate</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>27</b></div>
+  <div><h2>Decide on VAT</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i class=""></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Find out whether you must register for VAT, or should choose to.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Check the thresholds</h3><ol><li>Mandatory: taxable sales over AED 375,000 in the last 12 months, or expected in the next 30 days.</li><li>Voluntary: sales or expenses over AED 187,500.</li><li>The standard VAT rate is 5%.</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>If you register</h3><ol><li>Register on EmaraTax and receive your Tax Registration Number (TRN).</li><li>Show your TRN on every tax invoice.</li><li>File VAT returns (usually quarterly) within 28 days of each period end.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>Track your sales every month from day one. Registering late after crossing the threshold leads to penalties. We&#x27;ll tell you exactly when you need to register.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>Trade license</li><li>Sales records or forecast</li><li>Bank details</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 27 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">38</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 4 · <b>Operate</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>28</b></div>
+  <div><h2>Set up your bookkeeping</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i class=""></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Keep clean, accurate books from your very first transaction.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Set up your system</h3><ol><li>Choose cloud accounting software (e.g. Zoho Books).</li><li>Connect your business bank feed.</li><li>Set up your chart of accounts.</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Build good habits</h3><ol><li>Keep business and personal spending fully separate.</li><li>Save every invoice and receipt digitally.</li><li>Reconcile your bank account every month.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>Free zone companies claiming 0% Corporate Tax need audited financial statements. Clean monthly books make your audit faster and cheaper.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>Bank statements</li><li>Sales invoices</li><li>Purchase receipts</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 28 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">39</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 4 · <b>Operate</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>29</b></div>
+  <div><h2>Start trading the right way</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i><i class=""></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Get paid professionally and stay within the rules.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Set up invoicing</h3><ol><li>Create an invoice with your company name, license number and address.</li><li>If VAT-registered, title it &#x27;Tax Invoice&#x27; and show your TRN.</li><li>Add payment terms and your company IBAN.</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Go live</h3><ol><li>Register your .ae domain and business email.</li><li>Set up your Google Business Profile and LinkedIn page.</li><li>Use written contracts with every client.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>Only trade within your licensed activities, and always use your full legal company name on invoices and contracts. It protects you and keeps your bank happy.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>Trade license</li><li>Bank IBAN letter</li><li>Your logo</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 29 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">40</span></div></section><section class="page day"><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Week 4 · <b>Operate</b></span></div>
+<div class="dayhead">
+  <div class="daynum"><small>DAY</small><b>30</b></div>
+  <div><h2>Lock in your compliance calendar</h2><div class="progress"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="now"></i></div></div>
+</div>
+<div class="goal"><div class="ic"></div><div><small>Today's goal</small><p>Add every key date to your calendar so nothing is ever missed.</p></div></div>
+<div class="actions"><div class="act"><div class="lab">Action 1</div><h3>Add these dates</h3><ol><li>Trade license renewal (every year).</li><li>Visa, Emirates ID and health insurance expiry dates.</li><li>VAT returns and your Corporate Tax return (within 9 months of year end).</li><li>UBO updates within 15 days of any ownership change.</li></ol></div><div class="act"><div class="lab">Action 2</div><h3>Celebrate and plan ahead</h3><ol><li>Tick off your 30-day progress tracker.</li><li>Set your 90-day business goals.</li><li>Book a quarterly review with your accountant.</li></ol></div></div>
+<div class="duo">
+  <div class="tip"><div class="lab">Startup Zone pro tip</div>Let us carry the calendar for you. Our compliance team sends reminders for renewals and tax deadlines, so you can focus on growing your business.</div>
+  <div class="docs"><div class="lab">Documents needed</div><ul><li>Compliance calendar (this guide)</li></ul></div>
+</div>
+<div class="notes">
+  <div class="lines">My notes</div>
+  <div class="done"><div class="box"></div><b>Day 30 done!</b><div class="dt">Date: ____ / ____ / ______</div></div>
+</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">41</span></div></section><section class="page "><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Tracker</span></div>
+<div class="kicker">Progress tracker</div>
+<h2>Your 30-day tracker</h2>
+<p class="lead">Tick each box as you finish a day. Pin this page somewhere you'll see it.</p>
+<div class="tracker"><div class="w1"><small>DAY 01 · PLAN</small><p>Define your business idea</p><i></i></div><div class="w1"><small>DAY 02 · PLAN</small><p>Choose your business activities</p><i></i></div><div class="w1"><small>DAY 03 · PLAN</small><p>Mainland or free zone?</p><i></i></div><div class="w1"><small>DAY 04 · PLAN</small><p>Pick your free zone</p><i></i></div><div class="w1"><small>DAY 05 · PLAN</small><p>Decide owners and structure</p><i></i></div><div class="w1"><small>DAY 06 · PLAN</small><p>Choose your trade name</p><i></i></div><div class="w1"><small>DAY 07 · PLAN</small><p>Build your budget and visa plan</p><i></i></div><div class="w2"><small>DAY 08 · LICENSE</small><p>Prepare your document pack</p><i></i></div><div class="w2"><small>DAY 09 · LICENSE</small><p>Submit your application</p><i></i></div><div class="w2"><small>DAY 10 · LICENSE</small><p>Receive your initial approval</p><i></i></div><div class="w2"><small>DAY 11 · LICENSE</small><p>Sign your company documents</p><i></i></div><div class="w2"><small>DAY 12 · LICENSE</small><p>Choose your office space</p><i></i></div><div class="w2"><small>DAY 13 · LICENSE</small><p>Receive your trade license</p><i></i></div><div class="w2"><small>DAY 14 · LICENSE</small><p>Get your establishment card</p><i></i></div><div class="w2"><small>DAY 15 · LICENSE</small><p>File your UBO register</p><i></i></div><div class="w3"><small>DAY 16 · VISAS</small><p>Understand your visa journey</p><i></i></div><div class="w3"><small>DAY 17 · VISAS</small><p>Apply for your entry permit</p><i></i></div><div class="w3"><small>DAY 18 · VISAS</small><p>Travel to the UAE</p><i></i></div><div class="w3"><small>DAY 19 · VISAS</small><p>Complete your medical test</p><i></i></div><div class="w3"><small>DAY 20 · VISAS</small><p>Emirates ID biometrics</p><i></i></div><div class="w3"><small>DAY 21 · VISAS</small><p>Insurance and your residence visa</p><i></i></div><div class="w3"><small>DAY 22 · VISAS</small><p>Family and settling in</p><i></i></div><div class="w4"><small>DAY 23 · OPERATE</small><p>Choose your bank</p><i></i></div><div class="w4"><small>DAY 24 · OPERATE</small><p>Prepare your bank KYC pack</p><i></i></div><div class="w4"><small>DAY 25 · OPERATE</small><p>Open your bank account</p><i></i></div><div class="w4"><small>DAY 26 · OPERATE</small><p>Register for Corporate Tax</p><i></i></div><div class="w4"><small>DAY 27 · OPERATE</small><p>Decide on VAT</p><i></i></div><div class="w4"><small>DAY 28 · OPERATE</small><p>Set up your bookkeeping</p><i></i></div><div class="w4"><small>DAY 29 · OPERATE</small><p>Start trading the right way</p><i></i></div><div class="w4"><small>DAY 30 · OPERATE</small><p>Lock in your compliance calendar</p><i></i></div></div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">42</span></div></section><section class="page "><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Checklists</span></div><div class="kicker">Checklist</div><h2>Master document checklist</h2><p class="lead">Everything you'll provide and receive. Tick each item as it's ready.</p><div class="cl"><section class=""><h3>For your license</h3><ul><li>Passport copy of every shareholder (6+ months valid)</li><li>Passport-size photo (white background)</li><li>Proof of home address (last 3 months)</li><li>UAE visa or entry stamp page (if any)</li><li>CV / profile (for some activities)</li><li>Three trade name options</li><li>Signed application and KYC forms</li></ul></section><section class=""><h3>Corporate shareholder (extra)</h3><ul><li>Certificate of incorporation (attested)</li><li>Memorandum &amp; Articles of the parent company (attested)</li><li>Board resolution to set up the UAE company (attested)</li><li>Register of shareholders and directors</li><li>Passport of the authorised signatory</li></ul></section><section class=""><h3>For your visa</h3><ul><li>Original passport</li><li>Digital passport photo</li><li>Entry permit / change of status</li><li>Medical fitness test</li><li>Emirates ID biometrics</li><li>Health insurance certificate</li></ul></section><section class=""><h3>Company documents you receive</h3><ul><li>Trade license</li><li>Certificate of incorporation</li><li>Memorandum / Articles of Association</li><li>Share certificate</li><li>Lease / flexi-desk agreement</li><li>Establishment card</li><li>UBO register</li></ul></section></div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">43</span></div></section><section class="page "><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Checklists</span></div><div class="kicker">Day 24 companion</div><h2>Bank account readiness checklist</h2><p class="lead">Banks open accounts for businesses they understand. A complete pack is your fastest route to a yes.</p><div class="cl"><section class=""><h3>Company</h3><ul><li>Trade license and certificate of incorporation</li><li>MOA / AOA and share certificate</li><li>Lease or flexi-desk agreement</li><li>Establishment card</li><li>Board resolution naming the account signatory</li></ul></section><section class=""><h3>Shareholders &amp; signatories</h3><ul><li>Passport, residence visa and Emirates ID</li><li>CV / LinkedIn profile showing relevant experience</li><li>Proof of residential address</li><li>Personal bank statements (6 months)</li></ul></section><section class="wide"><h3>Your business story</h3><ul><li>1–2 page business plan</li><li>Expected monthly turnover and transaction volume</li><li>Main countries you&#x27;ll send money to and receive it from</li><li>Key clients and suppliers (names, countries)</li><li>Contracts, invoices or letters of intent</li><li>Proof of source of funds / initial capital</li><li>Company website and email on your own domain</li></ul></section></div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">44</span></div></section><section class="page "><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Compliance</span></div>
+<div class="kicker">Day 30 companion</div>
+<h2>Your compliance calendar</h2>
+<p class="lead">The dates every UAE company owner must know. Write your own due dates in the last column.</p>
+<table><tr><th>What</th><th>How often</th><th>Key point</th><th>My date</th></tr><tr><td>Trade license renewal</td><td>Every 12 months</td><td>Start 30–60 days before expiry</td><td style='width:14mm'>&nbsp;</td></tr><tr><td>Establishment card</td><td>Renews with your license</td><td>Needed to keep sponsoring visas</td><td style='width:14mm'>&nbsp;</td></tr><tr><td>Residence visa &amp; Emirates ID</td><td>Typically every 2 years</td><td>Avoid more than 6 months in a row outside the UAE</td><td style='width:14mm'>&nbsp;</td></tr><tr><td>Health insurance</td><td>Every 12 months</td><td>Must stay active for every visa holder</td><td style='width:14mm'>&nbsp;</td></tr><tr><td>Office / flexi-desk lease</td><td>Every 12 months</td><td>Usually renewed with the license</td><td style='width:14mm'>&nbsp;</td></tr><tr><td>VAT return</td><td>Usually quarterly</td><td>Due within 28 days after each tax period</td><td style='width:14mm'>&nbsp;</td></tr><tr><td>Corporate Tax return</td><td>Once a year</td><td>Due within 9 months of financial year end</td><td style='width:14mm'>&nbsp;</td></tr><tr><td>Audited financial statements</td><td>Once a year</td><td>Required for Qualifying Free Zone Persons; many free zones require them too</td><td style='width:14mm'>&nbsp;</td></tr><tr><td>UBO register update</td><td>When ownership changes</td><td>Update within 15 days of any change</td><td style='width:14mm'>&nbsp;</td></tr><tr><td>Bookkeeping &amp; bank reconciliation</td><td>Every month</td><td>Keep records for at least 7 years</td><td style='width:14mm'>&nbsp;</td></tr></table>
+<div class="note"><b>Never miss a deadline:</b> Startup Zone's accounting and compliance clients get
+reminders for every renewal and tax filing, plus bookkeeping, VAT and Corporate Tax returns handled
+for them.</div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">45</span></div></section><section class="page "><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">Glossary</span></div><div class="kicker">Glossary</div><h2>UAE business terms, made simple</h2>
+<p class="lead">The words you'll hear most during your setup, in plain English.</p><div class="gl"><div><b>AOA / MOA</b>Articles / Memorandum of Association: your company&#x27;s founding rulebook.</div><div><b>Corporate Tax (CT)</b>UAE tax on business profits: 9% above AED 375,000.</div><div><b>Emirates ID</b>Your UAE identity card, issued to every resident.</div><div><b>EmaraTax</b>The Federal Tax Authority&#x27;s online portal for VAT and Corporate Tax.</div><div><b>Ejari</b>Dubai&#x27;s official system for registering tenancy contracts.</div><div><b>Entry permit</b>Permission to enter the UAE to complete your residence visa.</div><div><b>Establishment card</b>Immigration file that lets your company sponsor visas.</div><div><b>FTA</b>Federal Tax Authority, which runs VAT and Corporate Tax.</div><div><b>FZE / FZCO / FZ-LLC</b>Free zone company types. Names vary by free zone.</div><div><b>Flexi-desk</b>Shared desk space that meets free zone office requirements.</div><div><b>Initial approval</b>First green light from the authority for your name and activities.</div><div><b>KYC</b>&#x27;Know Your Customer&#x27;: identity and background checks.</div><div><b>Mainland</b>Companies licensed by an emirate&#x27;s Department of Economy.</div><div><b>QFZP</b>Qualifying Free Zone Person: can pay 0% CT on qualifying income.</div><div><b>Share capital</b>The value of shares stated in your MOA.</div><div><b>TRN</b>Tax Registration Number, shown on tax invoices.</div><div><b>UAE Pass</b>The national digital ID app for government services.</div><div><b>UBO</b>Ultimate Beneficial Owner: a person owning or controlling 25%+.</div><div><b>VAT</b>Value Added Tax, charged at 5% in the UAE.</div></div><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">46</span></div></section><section class="page "><div class="top"><img src="assets/brand/Logo-Black.png" alt="Startup Zone"><span class="chip">FAQ</span></div><div class="kicker">FAQ</div><h2>Questions overseas investors ask us</h2>
+<div class="faq"><div><h3>Do I need to be in the UAE to set up my company?</h3><p>No. Your license can be issued fully remotely. You only need to visit for your visa medical test and Emirates ID, and often for your bank meeting.</p></div><div><h3>Can I own 100% of my company?</h3><p>Yes. Free zone companies are 100% foreign-owned, and so are most mainland activities.</p></div><div><h3>How long does it take?</h3><p>A free zone license is often ready within a week. With your visa, plan for about 3–4 weeks. Bank accounts vary and can take 2–6 weeks.</p></div><div><h3>Do I have to deposit share capital?</h3><p>In most free zones you don&#x27;t need to deposit it upfront, but rules vary. We&#x27;ll confirm for your free zone.</p></div><div><h3>Can I keep living abroad?</h3><p>Yes, but to keep your residence visa you should generally not stay outside the UAE for more than 6 months in a row.</p></div><div><h3>Will I pay tax?</h3><p>There&#x27;s no personal income tax. Your company may pay 9% Corporate Tax on profit above AED 375,000, or 0% on qualifying free zone income. VAT is 5% once registered.</p></div></div>
+<p class="disc"><b>Important:</b> This guide is general information correct as of November 2026.
+It is not legal or tax advice. UAE rules, fees, processing times and requirements change regularly and
+vary by free zone, nationality and bank. Speak to the Startup Zone team for advice on your situation.
+Photos: Unsplash.</p><div class="foot"><span>The 30-Day UAE Business Setup Guide · thestartupzone.ae</span><span class="pg">47</span></div></section><section class="page back">
+<div class="photo"></div>
+<div class="inner">
+  <h2>Ready to start? <span>We'll do it with you.</span></h2>
+  <p class="sub">From your first question to your first invoice, Startup Zone handles your company
+  setup, visas, bank introductions, VAT, Corporate Tax and bookkeeping, at a fixed price with no surprises.</p>
+  <div class="grid">
+    <ul>
+      <li><small>WhatsApp</small>+971 52 346 9382</li>
+      <li><small>Email</small>info@thestartupzone.ae</li>
+      <li><small>Website</small>thestartupzone.ae</li>
+      <li><small>Visit us</small>Latifa Tower, Suite 801, Sheikh Zayed Road, Dubai, UAE</li>
+    </ul>
+    <div class="qr">
+<svg width="43mm" height="43mm" version="1.1" viewBox="0 0 43 43" xmlns="http://www.w3.org/2000/svg"><path d="M1,1H2V2H1zM2,1H3V2H2zM3,1H4V2H3zM4,1H5V2H4zM5,1H6V2H5zM6,1H7V2H6zM7,1H8V2H7zM9,1H10V2H9zM12,1H13V2H12zM13,1H14V2H13zM14,1H15V2H14zM15,1H16V2H15zM18,1H19V2H18zM19,1H20V2H19zM20,1H21V2H20zM22,1H23V2H22zM23,1H24V2H23zM25,1H26V2H25zM26,1H27V2H26zM29,1H30V2H29zM30,1H31V2H30zM31,1H32V2H31zM35,1H36V2H35zM36,1H37V2H36zM37,1H38V2H37zM38,1H39V2H38zM39,1H40V2H39zM40,1H41V2H40zM41,1H42V2H41zM1,2H2V3H1zM7,2H8V3H7zM9,2H10V3H9zM14,2H15V3H14zM17,2H18V3H17zM20,2H21V3H20zM22,2H23V3H22zM25,2H26V3H25zM26,2H27V3H26zM30,2H31V3H30zM31,2H32V3H31zM32,2H33V3H32zM33,2H34V3H33zM35,2H36V3H35zM41,2H42V3H41zM1,3H2V4H1zM3,3H4V4H3zM4,3H5V4H4zM5,3H6V4H5zM7,3H8V4H7zM9,3H10V4H9zM10,3H11V4H10zM11,3H12V4H11zM14,3H15V4H14zM16,3H17V4H16zM17,3H18V4H17zM19,3H20V4H19zM20,3H21V4H20zM22,3H23V4H22zM23,3H24V4H23zM24,3H25V4H24zM25,3H26V4H25zM26,3H27V4H26zM27,3H28V4H27zM29,3H30V4H29zM35,3H36V4H35zM37,3H38V4H37zM38,3H39V4H38zM39,3H40V4H39zM41,3H42V4H41zM1,4H2V5H1zM3,4H4V5H3zM4,4H5V5H4zM5,4H6V5H5zM7,4H8V5H7zM10,4H11V5H10zM11,4H12V5H11zM12,4H13V5H12zM13,4H14V5H13zM14,4H15V5H14zM18,4H19V5H18zM21,4H22V5H21zM22,4H23V5H22zM23,4H24V5H23zM26,4H27V5H26zM30,4H31V5H30zM31,4H32V5H31zM35,4H36V5H35zM37,4H38V5H37zM38,4H39V5H38zM39,4H40V5H39zM41,4H42V5H41zM1,5H2V6H1zM3,5H4V6H3zM4,5H5V6H4zM5,5H6V6H5zM7,5H8V6H7zM9,5H10V6H9zM14,5H15V6H14zM18,5H19V6H18zM19,5H20V6H19zM20,5H21V6H20zM22,5H23V6H22zM23,5H24V6H23zM25,5H26V6H25zM26,5H27V6H26zM29,5H30V6H29zM30,5H31V6H30zM31,5H32V6H31zM32,5H33V6H32zM33,5H34V6H33zM35,5H36V6H35zM37,5H38V6H37zM38,5H39V6H38zM39,5H40V6H39zM41,5H42V6H41zM1,6H2V7H1zM7,6H8V7H7zM10,6H11V7H10zM13,6H14V7H13zM15,6H16V7H15zM16,6H17V7H16zM17,6H18V7H17zM19,6H20V7H19zM22,6H23V7H22zM23,6H24V7H23zM24,6H25V7H24zM26,6H27V7H26zM27,6H28V7H27zM33,6H34V7H33zM35,6H36V7H35zM41,6H42V7H41zM1,7H2V8H1zM2,7H3V8H2zM3,7H4V8H3zM4,7H5V8H4zM5,7H6V8H5zM6,7H7V8H6zM7,7H8V8H7zM9,7H10V8H9zM11,7H12V8H11zM13,7H14V8H13zM15,7H16V8H15zM17,7H18V8H17zM19,7H20V8H19zM21,7H22V8H21zM23,7H24V8H23zM25,7H26V8H25zM27,7H28V8H27zM29,7H30V8H29zM31,7H32V8H31zM33,7H34V8H33zM35,7H36V8H35zM36,7H37V8H36zM37,7H38V8H37zM38,7H39V8H38zM39,7H40V8H39zM40,7H41V8H40zM41,7H42V8H41zM10,8H11V9H10zM11,8H12V9H11zM17,8H18V9H17zM26,8H27V9H26zM32,8H33V9H32zM1,9H2V10H1zM4,9H5V10H4zM5,9H6V10H5zM6,9H7V10H6zM7,9H8V10H7zM8,9H9V10H8zM9,9H10V10H9zM10,9H11V10H10zM12,9H13V10H12zM13,9H14V10H13zM15,9H16V10H15zM16,9H17V10H16zM18,9H19V10H18zM19,9H20V10H19zM21,9H22V10H21zM23,9H24V10H23zM28,9H29V10H28zM29,9H30V10H29zM30,9H31V10H30zM32,9H33V10H32zM33,9H34V10H33zM34,9H35V10H34zM37,9H38V10H37zM39,9H40V10H39zM40,9H41V10H40zM41,9H42V10H41zM2,10H3V11H2zM3,10H4V11H3zM4,10H5V11H4zM5,10H6V11H5zM6,10H7V11H6zM10,10H11V11H10zM11,10H12V11H11zM13,10H14V11H13zM14,10H15V11H14zM15,10H16V11H15zM20,10H21V11H20zM21,10H22V11H21zM24,10H25V11H24zM25,10H26V11H25zM28,10H29V11H28zM29,10H30V11H29zM31,10H32V11H31zM32,10H33V11H32zM37,10H38V11H37zM41,10H42V11H41zM4,11H5V12H4zM5,11H6V12H5zM6,11H7V12H6zM7,11H8V12H7zM10,11H11V12H10zM11,11H12V12H11zM12,11H13V12H12zM13,11H14V12H13zM15,11H16V12H15zM18,11H19V12H18zM24,11H25V12H24zM26,11H27V12H26zM27,11H28V12H27zM28,11H29V12H28zM29,11H30V12H29zM31,11H32V12H31zM34,11H35V12H34zM35,11H36V12H35zM37,11H38V12H37zM39,11H40V12H39zM1,12H2V13H1zM2,12H3V13H2zM3,12H4V13H3zM8,12H9V13H8zM11,12H12V13H11zM12,12H13V13H12zM13,12H14V13H13zM16,12H17V13H16zM17,12H18V13H17zM18,12H19V13H18zM23,12H24V13H23zM24,12H25V13H24zM30,12H31V13H30zM31,12H32V13H31zM32,12H33V13H32zM33,12H34V13H33zM34,12H35V13H34zM35,12H36V13H35zM36,12H37V13H36zM38,12H39V13H38zM41,12H42V13H41zM4,13H5V14H4zM6,13H7V14H6zM7,13H8V14H7zM8,13H9V14H8zM10,13H11V14H10zM11,13H12V14H11zM14,13H15V14H14zM19,13H20V14H19zM21,13H22V14H21zM23,13H24V14H23zM24,13H25V14H24zM28,13H29V14H28zM29,13H30V14H29zM31,13H32V14H31zM35,13H36V14H35zM40,13H41V14H40zM41,13H42V14H41zM3,14H4V15H3zM4,14H5V15H4zM5,14H6V15H5zM6,14H7V15H6zM11,14H12V15H11zM12,14H13V15H12zM13,14H14V15H13zM14,14H15V15H14zM15,14H16V15H15zM16,14H17V15H16zM17,14H18V15H17zM19,14H20V15H19zM23,14H24V15H23zM24,14H25V15H24zM25,14H26V15H25zM26,14H27V15H26zM28,14H29V15H28zM29,14H30V15H29zM35,14H36V15H35zM37,14H38V15H37zM39,14H40V15H39zM41,14H42V15H41zM3,15H4V16H3zM5,15H6V16H5zM7,15H8V16H7zM8,15H9V16H8zM10,15H11V16H10zM11,15H12V16H11zM12,15H13V16H12zM13,15H14V16H13zM14,15H15V16H14zM17,15H18V16H17zM20,15H21V16H20zM21,15H22V16H21zM22,15H23V16H22zM26,15H27V16H26zM28,15H29V16H28zM32,15H33V16H32zM33,15H34V16H33zM34,15H35V16H34zM35,15H36V16H35zM37,15H38V16H37zM38,15H39V16H38zM40,15H41V16H40zM41,15H42V16H41zM1,16H2V17H1zM2,16H3V17H2zM4,16H5V17H4zM6,16H7V17H6zM10,16H11V17H10zM11,16H12V17H11zM14,16H15V17H14zM16,16H17V17H16zM21,16H22V17H21zM27,16H28V17H27zM28,16H29V17H28zM29,16H30V17H29zM32,16H33V17H32zM33,16H34V17H33zM34,16H35V17H34zM36,16H37V17H36zM37,16H38V17H37zM38,16H39V17H38zM39,16H40V17H39zM40,16H41V17H40zM1,17H2V18H1zM4,17H5V18H4zM5,17H6V18H5zM7,17H8V18H7zM8,17H9V18H8zM9,17H10V18H9zM12,17H13V18H12zM14,17H15V18H14zM15,17H16V18H15zM16,17H17V18H16zM17,17H18V18H17zM19,17H20V18H19zM20,17H21V18H20zM21,17H22V18H21zM24,17H25V18H24zM26,17H27V18H26zM28,17H29V18H28zM29,17H30V18H29zM34,17H35V18H34zM40,17H41V18H40zM2,18H3V19H2zM3,18H4V19H3zM4,18H5V19H4zM6,18H7V19H6zM8,18H9V19H8zM10,18H11V19H10zM12,18H13V19H12zM13,18H14V19H13zM16,18H17V19H16zM17,18H18V19H17zM18,18H19V19H18zM19,18H20V19H19zM21,18H22V19H21zM27,18H28V19H27zM28,18H29V19H28zM29,18H30V19H29zM30,18H31V19H30zM31,18H32V19H31zM32,18H33V19H32zM33,18H34V19H33zM34,18H35V19H34zM37,18H38V19H37zM38,18H39V19H38zM40,18H41V19H40zM4,19H5V20H4zM5,19H6V20H5zM6,19H7V20H6zM7,19H8V20H7zM10,19H11V20H10zM11,19H12V20H11zM12,19H13V20H12zM15,19H16V20H15zM16,19H17V20H16zM18,19H19V20H18zM20,19H21V20H20zM22,19H23V20H22zM23,19H24V20H23zM24,19H25V20H24zM26,19H27V20H26zM28,19H29V20H28zM30,19H31V20H30zM32,19H33V20H32zM33,19H34V20H33zM36,19H37V20H36zM37,19H38V20H37zM39,19H40V20H39zM41,19H42V20H41zM1,20H2V21H1zM2,20H3V21H2zM5,20H6V21H5zM6,20H7V21H6zM9,20H10V21H9zM10,20H11V21H10zM11,20H12V21H11zM12,20H13V21H12zM13,20H14V21H13zM14,20H15V21H14zM20,20H21V21H20zM26,20H27V21H26zM27,20H28V21H27zM29,20H30V21H29zM32,20H33V21H32zM33,20H34V21H33zM34,20H35V21H34zM37,20H38V21H37zM38,20H39V21H38zM39,20H40V21H39zM40,20H41V21H40zM41,20H42V21H41zM2,21H3V22H2zM3,21H4V22H3zM5,21H6V22H5zM6,21H7V22H6zM7,21H8V22H7zM9,21H10V22H9zM11,21H12V22H11zM15,21H16V22H15zM16,21H17V22H16zM19,21H20V22H19zM20,21H21V22H20zM22,21H23V22H22zM25,21H26V22H25zM27,21H28V22H27zM28,21H29V22H28zM29,21H30V22H29zM30,21H31V22H30zM31,21H32V22H31zM32,21H33V22H32zM35,21H36V22H35zM39,21H40V22H39zM1,22H2V23H1zM5,22H6V23H5zM6,22H7V23H6zM8,22H9V23H8zM12,22H13V23H12zM13,22H14V23H13zM15,22H16V23H15zM16,22H17V23H16zM18,22H19V23H18zM19,22H20V23H19zM20,22H21V23H20zM23,22H24V23H23zM24,22H25V23H24zM25,22H26V23H25zM26,22H27V23H26zM28,22H29V23H28zM32,22H33V23H32zM33,22H34V23H33zM35,22H36V23H35zM36,22H37V23H36zM37,22H38V23H37zM39,22H40V23H39zM2,23H3V24H2zM3,23H4V24H3zM4,23H5V24H4zM5,23H6V24H5zM6,23H7V24H6zM7,23H8V24H7zM9,23H10V24H9zM14,23H15V24H14zM18,23H19V24H18zM19,23H20V24H19zM24,23H25V24H24zM25,23H26V24H25zM27,23H28V24H27zM28,23H29V24H28zM30,23H31V24H30zM31,23H32V24H31zM4,24H5V25H4zM5,24H6V25H5zM6,24H7V25H6zM8,24H9V25H8zM13,24H14V25H13zM16,24H17V25H16zM17,24H18V25H17zM18,24H19V25H18zM19,24H20V25H19zM20,24H21V25H20zM21,24H22V25H21zM24,24H25V25H24zM25,24H26V25H25zM27,24H28V25H27zM30,24H31V25H30zM34,24H35V25H34zM35,24H36V25H35zM36,24H37V25H36zM37,24H38V25H37zM38,24H39V25H38zM40,24H41V25H40zM41,24H42V25H41zM2,25H3V26H2zM3,25H4V26H3zM6,25H7V26H6zM7,25H8V26H7zM10,25H11V26H10zM13,25H14V26H13zM16,25H17V26H16zM19,25H20V26H19zM23,25H24V26H23zM24,25H25V26H24zM27,25H28V26H27zM28,25H29V26H28zM29,25H30V26H29zM31,25H32V26H31zM33,25H34V26H33zM34,25H35V26H34zM35,25H36V26H35zM36,25H37V26H36zM37,25H38V26H37zM40,25H41V26H40zM1,26H2V27H1zM2,26H3V27H2zM4,26H5V27H4zM5,26H6V27H5zM9,26H10V27H9zM10,26H11V27H10zM11,26H12V27H11zM15,26H16V27H15zM21,26H22V27H21zM23,26H24V27H23zM24,26H25V27H24zM25,26H26V27H25zM26,26H27V27H26zM28,26H29V27H28zM29,26H30V27H29zM31,26H32V27H31zM33,26H34V27H33zM34,26H35V27H34zM35,26H36V27H35zM36,26H37V27H36zM37,26H38V27H37zM39,26H40V27H39zM40,26H41V27H40zM41,26H42V27H41zM1,27H2V28H1zM3,27H4V28H3zM4,27H5V28H4zM5,27H6V28H5zM7,27H8V28H7zM8,27H9V28H8zM9,27H10V28H9zM10,27H11V28H10zM11,27H12V28H11zM12,27H13V28H12zM14,27H15V28H14zM20,27H21V28H20zM22,27H23V28H22zM23,27H24V28H23zM26,27H27V28H26zM27,27H28V28H27zM28,27H29V28H28zM31,27H32V28H31zM32,27H33V28H32zM33,27H34V28H33zM37,27H38V28H37zM38,27H39V28H38zM40,27H41V28H40zM41,27H42V28H41zM1,28H2V29H1zM2,28H3V29H2zM4,28H5V29H4zM6,28H7V29H6zM8,28H9V29H8zM9,28H10V29H9zM10,28H11V29H10zM11,28H12V29H11zM12,28H13V29H12zM13,28H14V29H13zM15,28H16V29H15zM16,28H17V29H16zM17,28H18V29H17zM20,28H21V29H20zM23,28H24V29H23zM25,28H26V29H25zM27,28H28V29H27zM31,28H32V29H31zM32,28H33V29H32zM37,28H38V29H37zM38,28H39V29H38zM39,28H40V29H39zM1,29H2V30H1zM2,29H3V30H2zM3,29H4V30H3zM4,29H5V30H4zM6,29H7V30H6zM7,29H8V30H7zM8,29H9V30H8zM10,29H11V30H10zM12,29H13V30H12zM13,29H14V30H13zM14,29H15V30H14zM16,29H17V30H16zM19,29H20V30H19zM21,29H22V30H21zM22,29H23V30H22zM23,29H24V30H23zM24,29H25V30H24zM25,29H26V30H25zM26,29H27V30H26zM29,29H30V30H29zM30,29H31V30H30zM32,29H33V30H32zM38,29H39V30H38zM40,29H41V30H40zM1,30H2V31H1zM2,30H3V31H2zM3,30H4V31H3zM4,30H5V31H4zM9,30H10V31H9zM10,30H11V31H10zM11,30H12V31H11zM13,30H14V31H13zM14,30H15V31H14zM16,30H17V31H16zM17,30H18V31H17zM18,30H19V31H18zM20,30H21V31H20zM21,30H22V31H21zM25,30H26V31H25zM26,30H27V31H26zM27,30H28V31H27zM30,30H31V31H30zM32,30H33V31H32zM33,30H34V31H33zM37,30H38V31H37zM38,30H39V31H38zM41,30H42V31H41zM1,31H2V32H1zM2,31H3V32H2zM4,31H5V32H4zM5,31H6V32H5zM6,31H7V32H6zM7,31H8V32H7zM10,31H11V32H10zM13,31H14V32H13zM14,31H15V32H14zM15,31H16V32H15zM18,31H19V32H18zM20,31H21V32H20zM23,31H24V32H23zM24,31H25V32H24zM25,31H26V32H25zM26,31H27V32H26zM27,31H28V32H27zM28,31H29V32H28zM29,31H30V32H29zM30,31H31V32H30zM31,31H32V32H31zM32,31H33V32H32zM34,31H35V32H34zM36,31H37V32H36zM37,31H38V32H37zM39,31H40V32H39zM41,31H42V32H41zM1,32H2V33H1zM2,32H3V33H2zM4,32H5V33H4zM6,32H7V33H6zM8,32H9V33H8zM9,32H10V33H9zM11,32H12V33H11zM12,32H13V33H12zM16,32H17V33H16zM20,32H21V33H20zM25,32H26V33H25zM26,32H27V33H26zM32,32H33V33H32zM35,32H36V33H35zM39,32H40V33H39zM41,32H42V33H41zM1,33H2V34H1zM2,33H3V34H2zM3,33H4V34H3zM6,33H7V34H6zM7,33H8V34H7zM12,33H13V34H12zM14,33H15V34H14zM17,33H18V34H17zM18,33H19V34H18zM19,33H20V34H19zM20,33H21V34H20zM21,33H22V34H21zM23,33H24V34H23zM27,33H28V34H27zM28,33H29V34H28zM29,33H30V34H29zM30,33H31V34H30zM32,33H33V34H32zM33,33H34V34H33zM34,33H35V34H34zM35,33H36V34H35zM36,33H37V34H36zM37,33H38V34H37zM39,33H40V34H39zM40,33H41V34H40zM41,33H42V34H41zM9,34H10V35H9zM10,34H11V35H10zM11,34H12V35H11zM16,34H17V35H16zM18,34H19V35H18zM24,34H25V35H24zM27,34H28V35H27zM28,34H29V35H28zM29,34H30V35H29zM31,34H32V35H31zM32,34H33V35H32zM33,34H34V35H33zM37,34H38V35H37zM39,34H40V35H39zM40,34H41V35H40zM1,35H2V36H1zM2,35H3V36H2zM3,35H4V36H3zM4,35H5V36H4zM5,35H6V36H5zM6,35H7V36H6zM7,35H8V36H7zM9,35H10V36H9zM10,35H11V36H10zM17,35H18V36H17zM21,35H22V36H21zM23,35H24V36H23zM24,35H25V36H24zM28,35H29V36H28zM31,35H32V36H31zM32,35H33V36H32zM33,35H34V36H33zM35,35H36V36H35zM37,35H38V36H37zM40,35H41V36H40zM1,36H2V37H1zM7,36H8V37H7zM9,36H10V37H9zM13,36H14V37H13zM15,36H16V37H15zM16,36H17V37H16zM19,36H20V37H19zM27,36H28V37H27zM30,36H31V37H30zM31,36H32V37H31zM33,36H34V37H33zM37,36H38V37H37zM1,37H2V38H1zM3,37H4V38H3zM4,37H5V38H4zM5,37H6V38H5zM7,37H8V38H7zM9,37H10V38H9zM10,37H11V38H10zM11,37H12V38H11zM14,37H15V38H14zM18,37H19V38H18zM20,37H21V38H20zM21,37H22V38H21zM28,37H29V38H28zM31,37H32V38H31zM32,37H33V38H32zM33,37H34V38H33zM34,37H35V38H34zM35,37H36V38H35zM36,37H37V38H36zM37,37H38V38H37zM40,37H41V38H40zM41,37H42V38H41zM1,38H2V39H1zM3,38H4V39H3zM4,38H5V39H4zM5,38H6V39H5zM7,38H8V39H7zM9,38H10V39H9zM10,38H11V39H10zM11,38H12V39H11zM12,38H13V39H12zM16,38H17V39H16zM17,38H18V39H17zM19,38H20V39H19zM23,38H24V39H23zM24,38H25V39H24zM26,38H27V39H26zM28,38H29V39H28zM29,38H30V39H29zM30,38H31V39H30zM32,38H33V39H32zM36,38H37V39H36zM39,38H40V39H39zM41,38H42V39H41zM1,39H2V40H1zM3,39H4V40H3zM4,39H5V40H4zM5,39H6V40H5zM7,39H8V40H7zM13,39H14V40H13zM14,39H15V40H14zM17,39H18V40H17zM20,39H21V40H20zM22,39H23V40H22zM27,39H28V40H27zM28,39H29V40H28zM30,39H31V40H30zM32,39H33V40H32zM34,39H35V40H34zM36,39H37V40H36zM37,39H38V40H37zM41,39H42V40H41zM1,40H2V41H1zM7,40H8V41H7zM10,40H11V41H10zM17,40H18V41H17zM18,40H19V41H18zM20,40H21V41H20zM21,40H22V41H21zM23,40H24V41H23zM28,40H29V41H28zM29,40H30V41H29zM31,40H32V41H31zM37,40H38V41H37zM38,40H39V41H38zM39,40H40V41H39zM41,40H42V41H41zM1,41H2V42H1zM2,41H3V42H2zM3,41H4V42H3zM4,41H5V42H4zM5,41H6V42H5zM6,41H7V42H6zM7,41H8V42H7zM9,41H10V42H9zM10,41H11V42H10zM12,41H13V42H12zM14,41H15V42H14zM16,41H17V42H16zM18,41H19V42H18zM19,41H20V42H19zM20,41H21V42H20zM24,41H25V42H24zM26,41H27V42H26zM27,41H28V42H27zM28,41H29V42H28zM32,41H33V42H32zM33,41H34V42H33zM34,41H35V42H34zM37,41H38V42H37zM38,41H39V42H38z" id="qr-path" fill="#000000" fill-opacity="1" fill-rule="nonzero" stroke="none"/></svg>Scan to chat on WhatsApp</div>
+  </div>
+  <span class="cta">Book your free consultation →</span>
+  <div class="services"><span>Free zone setup</span><span>Mainland setup</span><span>Residence visas</span>
+  <span>Bank account support</span><span>VAT</span><span>Corporate Tax</span><span>Bookkeeping & accounting</span></div>
+</div>
+<img class="logo" src="assets/brand/Logo-white.png" alt="Startup Zone">
+<div class="fine">1,000+ clients · 5.0 on Google<br>© 2026 Startup Zone. General information only, not legal or tax advice.</div></section></body></html>
