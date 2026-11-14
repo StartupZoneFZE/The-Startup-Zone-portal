@@ -27,3 +27,6 @@ Started 2026-11-14. All steps are read-only unless stated.
 | 21 | CRM follow-up activity | Contacted_Date filled on 0 leads. Calls logged since 1 Aug: 14. Tasks since 1 Aug: 35 completed, 25 not started. 246 deals were created 15 Apr-14 Jul 2026, then deal creation stopped. |
 | 22 | CRM upcoming renewals pricing | Agreed_Renewal_Price is empty on all 110 licences expiring in the next 3 months. Active licences by zone: ANCFZ 224, SRTIP 51, SHAMS 48, AFZ 29, Meydan 22, IFZA 12, RAKEZ 11, SPC 9. |
 | 23 | Waiting on | Website audit, Books line-item sample, competitor round 2 (Creative Zone, A&A, RAKEZ). |
+| 24 | Competitor round 2 (Creative Zone, A&A Associate, RAKEZ) | Done, search summaries only (sites blocked), so all prices unverified. Creative Zone: SPC from AED 5,750; Virtual Accountant AED 750/month; referral reward up to AED 3,500; "Business Boosting Package worth AED 10,000+". A&A Associate (aaconsultancy.ae): accounting AED 999 / 2,199 / 3,599 per month by transaction volume; CT services from 5,000/yr; dated price-in-title page per free zone. RAKEZ direct: licence AED 5,499 with 3-year price guarantee, Tabby instalments on setup and renewal, channel partner incentive up to 35%. |
+| 25 | Committed and pushed this log to branch claude/hopeful-curie-xb0lqt | Done. |
+| 26 | Still waiting on | Website audit, Books line-item sample. |
